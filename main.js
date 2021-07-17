@@ -21,32 +21,58 @@ console.log(cards);
 /* creates 52 "inner" arrays for each of the 52 cards within the single "outer" array named "images". 
 Each of the 52 "inner" arrays contains the unique ordered array number (0-51) of the card within the "outer" array and an src value linking to the image of the respective card*/
 
-let images = new Array();
+let cardImages = new Array();
 
 for(let i=0; i<52; i++) {
-images.push([i]); 
-images[i].src = 'assets/images/' + cards[i] + '.jpg'; 
+   let card = {
+      cardNumber: i,
+      cardImage: ""
+   };
+   card.cardImage = 'assets/images/' + cards[i] + '.jpg';
+   cardImages.push(card); 
+   
 }
 
 // prints the images array containing 52 "inner" arrays, each representing a card, for testing only, TO BE DELETED LATER
-console.log(images);
+console.log(cardImages);
 
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // creates a random card image and inserts it into each of the 5 container div elements
+
+let cardsPicked = [];
 
 for (var i=1; i<6; i++) {
 
-var img = document.createElement('img');
- img.alt = "Alternative text required";
+   // A function which produces a random integer between 0 and 51
+   let randomCard = Math.floor((Math.random())*52);
+   console.log(randomCard);
 
- // A function which produces a random integer between 0 and 51
-let randomcard = Math.floor((Math.random())*52);
-console.log(randomcard);
+   // Picks a random card
+   var cardPicked = cardImages[randomCard];
+   console.log(cardPicked);
 
- img.src = images[randomcard].src;
- document.getElementById('container' + i).appendChild(img);
+   // Adds the image of the random card to the respective div container
+   let z = document.createElement('img');
+   let z1 = document.getElementById('container' + i).appendChild(z);
+   let z2 = cardPicked.cardImage;
+   z1.setAttribute('src', z2);
+   
+   cardsPicked.push(cardPicked);
+   
+};
 
-}
+// Logs the array of 5 cards picked randomly   
+console.log(cardsPicked);
+
+
+
+   
+   
+   
+
+
+
+
 
 
 
