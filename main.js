@@ -15,7 +15,7 @@ for(var i = 0; i < cardNumbers.length; i++)
      }
 };
 
-// prints the array of the 52 cards
+// prints the array of the 52 cards, for testing only, TO BE DELETED LATER
 console.log(cards);
 
 /* creates 52 "inner" arrays for each of the 52 cards within the single "outer" array named "images". 
@@ -28,21 +28,25 @@ images.push([i]);
 images[i].src = 'assets/images/' + cards[i] + '.jpg'; 
 }
 
-// prints the images array containing 52 "inner" arrays, each representing a card
+// prints the images array containing 52 "inner" arrays, each representing a card, for testing only, TO BE DELETED LATER
 console.log(images);
 
 
-// A function which produces a random integer between 0 and 51
+// creates a random card image and inserts it into each of the 5 container div elements
+
+for (var i=1; i<6; i++) {
+
+var img = document.createElement('img');
+ img.alt = "Alternative text required";
+
+ // A function which produces a random integer between 0 and 51
 let randomcard = Math.floor((Math.random())*52);
 console.log(randomcard);
 
-
-// creates a random card image and inserts it into one of the container div elements
-var img = document.createElement('img');
- img.alt = "Alternative text required";
  img.src = images[randomcard].src;
- document.getElementById('test2').appendChild(img);
+ document.getElementById('container' + i).appendChild(img);
 
+}
 
 
 
