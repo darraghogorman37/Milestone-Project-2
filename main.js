@@ -61,18 +61,35 @@ for (var i=1; i<6; i++) {
    
 };
 
+
+
 // Logs the array of 5 cards picked randomly   
 console.log(cardsPicked);
 
 
+// after time elapses, the cards picked from the deck disappear
+setTimeout(
+function clearcardsPickedDivs() {
+   document.getElementById('container1').style.display = 'none';
+   document.getElementById('container2').style.display = 'none';
+   document.getElementById('container3').style.display = 'none';
+   document.getElementById('container4').style.display = 'none';
+   document.getElementById('container5').style.display = 'none';
+}, 
+10000
+);
 
-   
-   
-   
-
-
-
-
-
-
+// after time elapses, all 52 cards in the deck appear for player selection
+setTimeout(
+   function clearcardsPickedDivs() {
+      for (i=0; i<51; i++) {
+         let j = cardImages[i].cardImage;
+         let k = document.createElement('img');
+         let l = document.getElementById('container6').appendChild(k);
+         l.setAttribute('src', j);
+         l.setAttribute('width', '100');
+      }
+   },
+   10000
+);
 
