@@ -76,20 +76,43 @@ function clearcardsPickedDivs() {
    document.getElementById('container4').style.display = 'none';
    document.getElementById('container5').style.display = 'none';
 }, 
-10000
+2000
 );
 
 // after time elapses, all 52 cards in the deck appear for player selection
 setTimeout(
-   function clearcardsPickedDivs() {
-      for (i=0; i<51; i++) {
+   function displayAllCards() {
+      for (i=0; i<52; i++) {
          let j = cardImages[i].cardImage;
          let k = document.createElement('img');
          let l = document.getElementById('container6').appendChild(k);
          l.setAttribute('src', j);
          l.setAttribute('width', '100');
-      }
-   },
+         l.setAttribute('class', 'readyforselection');
+         l.setAttribute('data-cardnumber', i);
+         }
+
+
+// on clicking, the player's selected cards are added to a new array playerSelectionOfCards
+
+         $('.readyforselection').on('click', pushToPlayerSelectionOfCards);
+         
+         let playerSelectionOfCards = [];
+
+            function pushToPlayerSelectionOfCards() {
+            let x = $(this).attr("data-cardnumber"); 
+            playerSelectionOfCards.push(x);
+            console.log(playerSelectionOfCards);
+            }
+         
+      },
+
    10000
 );
+
+
+
+         
+
+
 
