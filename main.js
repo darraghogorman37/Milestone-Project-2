@@ -1,3 +1,6 @@
+
+
+
 // An array of the numbers component of a standard 52 pack of cards
 let cardNumbers = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
 
@@ -14,6 +17,8 @@ for(var i = 0; i < cardNumbers.length; i++)
         cards.push(cardNumbers[i] + cardSuits[j]);
      }
 };
+
+var playerSelectionOfCards = [];
 
 // prints the array of the 52 cards, for testing only, TO BE DELETED LATER
 function printAllCards() {
@@ -44,7 +49,7 @@ console.log(cardImages);
 
 var cardsPicked = [];
 
-pickRandomCard()
+pickRandomCard();
 function pickRandomCard() {
    
    for (var i=1; i<6; i++) {
@@ -66,46 +71,57 @@ function pickRandomCard() {
       let z1 = document.getElementById('container' + i).appendChild(z);
       let z2 = cardPicked.cardImage;
       z1.setAttribute('src', z2);
+
+      displayCardsPickedDivs();
    
       cardsPicked.push(cardPicked);
 
       // Logs the array of 5 cards picked randomly   
-      console.log(cardsPicked);
+      console.log(cardsPicked); 
 
-      displayCardsPickedDivs()
+      
+      
    };
+
+   // after time elapses, the cards picked from the deck disappear
+   setTimeout(hideCardsPickedDivs, 10000);
+
+   
+
 };
 
 
-var playerSelectionOfCards = [];
 
-
-
-// after time elapses, the cards picked from the deck disappear
-setTimeout(
-function clearcardsPickedDivs() {
+function hideCardsPickedDivs() {
    document.getElementById('container1').style.display = 'none';
    document.getElementById('container2').style.display = 'none';
    document.getElementById('container3').style.display = 'none';
    document.getElementById('container4').style.display = 'none';
    document.getElementById('container5').style.display = 'none';
-}, 
-4000
-);
+
+   playersTurn();
+};
+
+
+
+
+
 
 // after time elapses, all 52 cards in the deck appear for player selection
-setTimeout(
-   function displayAllCards() {
-      for (i=0; i<52; i++) {
-         let j = cardImages[i].cardImage;
-         let k = document.createElement('img');
-         let l = document.getElementById('container6').appendChild(k);
-         l.setAttribute('src', j);
-         l.setAttribute('width', '100');
-         l.setAttribute('class', 'readyforselection');
-         l.setAttribute('data-cardnumber', i);
-         }
-      displayPlayersButtons();
+function playersTurn() {
+   setTimeout(
+      function displayAllCards() {
+         for (i=0; i<52; i++) {
+            let j = cardImages[i].cardImage;
+            let k = document.createElement('img');
+            let l = document.getElementById('container6').appendChild(k);
+            l.setAttribute('src', j);
+            l.setAttribute('width', '100');
+            l.setAttribute('class', 'readyforselection');
+            l.setAttribute('data-cardnumber', i);
+            }
+            displayPlayersButtons();
+   
 
          
 
@@ -133,8 +149,9 @@ setTimeout(
 
       $('#playerbutton').on('click', runComparison);
 
-   },4000
-);
+      },4000
+   );
+};
 
 function displayCardsPickedDivs() {
    document.getElementById('container1').style.display = 'flex';
@@ -142,16 +159,9 @@ function displayCardsPickedDivs() {
    document.getElementById('container3').style.display = 'flex';
    document.getElementById('container4').style.display = 'flex';
    document.getElementById('container5').style.display = 'flex';
-}
-
-// removes any existing images within the div containers 1-5
-function clearImagesFromCardsPickedDivs() {
-   for (i=1; i<6; i++) {
-   let x = document.getElementById('container' + i);
-   x.removeChild(x.childNodes[0]);
-   };
-   emptyCardsPicked();
 };
+
+
 
 // empty the cardsPicked array
 
@@ -168,7 +178,7 @@ function displayPlayersButtons() {
    document.getElementById('container6').appendChild(playerButton);
    playerButton.innerHTML='SUBMIT SELECTION';
    playerButton.setAttribute('id', 'playerbutton');
-}
+};
 
 // compares playerSelectionOfCards versus cardsPicked on clicking "SUBMIT SELECTION" button
 
@@ -192,7 +202,37 @@ function runComparison() {
    } else {
       alert("SORRY");
    };
+
+   clearArrays();
+
 };
+
+function clearArrays() {
+   cardsPicked = [];
+   console.log(cardsPicked);
+   playerSelectionOfCards = [];
+   console.log(playerSelectionOfCards);
+   cardNumbersFromCardsPicked = [];
+   console.log(cardNumbersFromCardsPicked);
+
+   clearImagesFromCardsPickedDivs();
+
+};
+
+// removes any existing images within the div containers 1-6
+function clearImagesFromCardsPickedDivs() {
+   for (i=1; i<6; i++) {
+   let x = document.getElementById('container' + i);
+   x.removeChild(x.childNodes[0]);
+   };
+   document.getElementById('container6').innerHTML='';
+
+   pickRandomCard();
+   
+};
+
+
+
 
 
 
