@@ -1,4 +1,40 @@
-div {
-    border-style: solid;
+#body-div {
+    background-color: #25852a;
+    
+    
+
+}
+
+#body-div div {
+    border-style: none;
     border-width: 2px;
+    padding: 0 5px 5px 5px;
+}
+
+.random-card img {
+    border-style: none;
+    max-height: 130px;
+    width: auto;
+    border-style: solid;
+    border-color: black;
+    margin-top: -33px;
+}
+
+#container1 img {
+    margin-top: 5px;
+}
+
+@media only screen and (min-width: 600px) {
+    .random-card img {
+      max-height: 280px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .random-card img {
+        margin-top: -150px;
+        max-width: 180px;
+        height: auto;
+
+    }
 }

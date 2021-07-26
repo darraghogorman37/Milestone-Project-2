@@ -81,7 +81,7 @@ function pickRandomCard() {
    };
 
    // after time elapses, the cards picked from the deck disappear
-   setTimeout(hideCardsPickedDivs, 10000);
+   setTimeout(hideCardsPickedDivs, 10000000);
 
    
 
