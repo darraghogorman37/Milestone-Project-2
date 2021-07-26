@@ -172,23 +172,29 @@ function displayPlayersButtons() {
 
 // compares playerSelectionOfCards versus cardsPicked on clicking "SUBMIT SELECTION" button
 
-
+let cardNumbersFromCardsPicked = [];
 
 function runComparison() {
    
-   let cardNumbersFromCardsPicked = [];
+   
    for (i=0; i<5; i++) {
       let x = cardsPicked[i].cardNumber;
-      cardNumbersFromCardsPicked.push(x);
-      console.log(cardNumbersFromCardsPicked);
+      let y = x.toString();
+      cardNumbersFromCardsPicked.push(y);
+      
    };
 
-   if (playerSelectionOfCards === cardNumbersFromCardsPicked) {
+   console.log(cardNumbersFromCardsPicked);
+      console.log(playerSelectionOfCards);
+
+   if (JSON.stringify(playerSelectionOfCards) === JSON.stringify(cardNumbersFromCardsPicked)) {
       alert("WELL DONE");
    } else {
       alert("SORRY");
    };
 };
+
+
 
 
          
