@@ -1,6 +1,3 @@
-
-
-
 // An array of the numbers component of a standard 52 pack of cards
 let cardNumbers = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
 
@@ -99,7 +96,7 @@ function hideCardsPickedDivs() {
    document.getElementById('container4').style.display = 'none';
    document.getElementById('container5').style.display = 'none';
 
-   playersTurn();
+   displayAllCards();
 };
 
 
@@ -107,9 +104,8 @@ function hideCardsPickedDivs() {
 
 
 
-// after time elapses, all 52 cards in the deck appear for player selection
-function playersTurn() {
-   setTimeout(
+// all 52 cards in the deck appear for player selection
+
       function displayAllCards() {
          for (i=0; i<52; i++) {
             let j = cardImages[i].cardImage;
@@ -149,8 +145,7 @@ function playersTurn() {
 
       $('#playerbutton').on('click', runComparison);
 
-      },4000
-   );
+     
 };
 
 function displayCardsPickedDivs() {
@@ -207,6 +202,7 @@ function runComparison() {
 
 };
 
+// clears all arrays to empty
 function clearArrays() {
    cardsPicked = [];
    console.log(cardsPicked);
