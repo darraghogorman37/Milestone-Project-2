@@ -16,7 +16,10 @@ for(var i = 0; i < cardNumbers.length; i++)
 };
 
 // prints the array of the 52 cards, for testing only, TO BE DELETED LATER
-console.log(cards);
+function printAllCards() {
+console.log(cards)};
+
+printAllCards();
 
 /* creates 52 "inner" arrays for each of the 52 cards within the single "outer" array named "images". 
 Each of the 52 "inner" arrays contains the unique ordered array number (0-51) of the card within the "outer" array and an src value linking to the image of the respective card*/
@@ -39,32 +42,43 @@ console.log(cardImages);
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // creates a random card image and inserts it into each of the 5 container div elements
 
-let cardsPicked = [];
+var cardsPicked = [];
 
-for (var i=1; i<6; i++) {
-
-   // A function which produces a random integer between 0 and 51
-   let randomCard = Math.floor((Math.random())*52);
-   console.log(randomCard);
-
-   // Picks a random card
-   var cardPicked = cardImages[randomCard];
-   console.log(cardPicked);
-
-   // Adds the image of the random card to the respective div container
-   let z = document.createElement('img');
-   let z1 = document.getElementById('container' + i).appendChild(z);
-   let z2 = cardPicked.cardImage;
-   z1.setAttribute('src', z2);
+pickRandomCard()
+function pickRandomCard() {
    
-   cardsPicked.push(cardPicked);
+   for (var i=1; i<6; i++) {
    
+      
+
+      // produces a random integer between 0 and 51
+      let randomCard = Math.floor((Math.random())*52);
+      console.log(randomCard);
+
+      // Picks a random card
+      var cardPicked = cardImages[randomCard];
+      console.log(cardPicked);
+
+      
+      
+      // Adds the image of the random card to the respective div container
+      let z = document.createElement('img');
+      let z1 = document.getElementById('container' + i).appendChild(z);
+      let z2 = cardPicked.cardImage;
+      z1.setAttribute('src', z2);
+   
+      cardsPicked.push(cardPicked);
+
+      // Logs the array of 5 cards picked randomly   
+      console.log(cardsPicked);
+
+      displayCardsPickedDivs()
+   };
 };
 
 
+var playerSelectionOfCards = [];
 
-// Logs the array of 5 cards picked randomly   
-console.log(cardsPicked);
 
 
 // after time elapses, the cards picked from the deck disappear
@@ -76,7 +90,7 @@ function clearcardsPickedDivs() {
    document.getElementById('container4').style.display = 'none';
    document.getElementById('container5').style.display = 'none';
 }, 
-2000
+4000
 );
 
 // after time elapses, all 52 cards in the deck appear for player selection
@@ -91,25 +105,90 @@ setTimeout(
          l.setAttribute('class', 'readyforselection');
          l.setAttribute('data-cardnumber', i);
          }
+      displayPlayersButtons();
 
-
-// on clicking, the player's selected cards are added to a new array playerSelectionOfCards
-
-         $('.readyforselection').on('click', pushToPlayerSelectionOfCards);
          
-         let playerSelectionOfCards = [];
 
-            function pushToPlayerSelectionOfCards() {
+      // on clicking, the player's selected cards are added to a new array playerSelectionOfCards
+      
+
+      $('.readyforselection').on('click', pushToPlayerSelectionOfCards);
+      
+      
+
+      
+      function pushToPlayerSelectionOfCards() {
+
+         
+         
+         if (playerSelectionOfCards.length < 5) {
             let x = $(this).attr("data-cardnumber"); 
             playerSelectionOfCards.push(x);
             console.log(playerSelectionOfCards);
-            }
-         
-      },
+         }  else {
+            alert('Too many cards selected');
+            
+         } 
+      }
 
-   10000
+      $('#playerbutton').on('click', runComparison);
+
+   },4000
 );
 
+function displayCardsPickedDivs() {
+   document.getElementById('container1').style.display = 'flex';
+   document.getElementById('container2').style.display = 'flex';
+   document.getElementById('container3').style.display = 'flex';
+   document.getElementById('container4').style.display = 'flex';
+   document.getElementById('container5').style.display = 'flex';
+}
+
+// removes any existing images within the div containers 1-5
+function clearImagesFromCardsPickedDivs() {
+   for (i=1; i<6; i++) {
+   let x = document.getElementById('container' + i);
+   x.removeChild(x.childNodes[0]);
+   };
+   emptyCardsPicked();
+};
+
+// empty the cardsPicked array
+
+function emptyCardsPicked() {
+cardsPicked.splice(0,5);
+console.log(cardsPicked);
+pickRandomCard();
+};
+
+// displays users buttons
+
+function displayPlayersButtons() {
+   let playerButton = document.createElement('button');
+   document.getElementById('container6').appendChild(playerButton);
+   playerButton.innerHTML='SUBMIT SELECTION';
+   playerButton.setAttribute('id', 'playerbutton');
+}
+
+// compares playerSelectionOfCards versus cardsPicked on clicking "SUBMIT SELECTION" button
+
+
+
+function runComparison() {
+   
+   let cardNumbersFromCardsPicked = [];
+   for (i=0; i<5; i++) {
+      let x = cardsPicked[i].cardNumber;
+      cardNumbersFromCardsPicked.push(x);
+      console.log(cardNumbersFromCardsPicked);
+   };
+
+   if (playerSelectionOfCards === cardNumbersFromCardsPicked) {
+      alert("WELL DONE");
+   } else {
+      alert("SORRY");
+   };
+};
 
 
          
