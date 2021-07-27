@@ -9,6 +9,9 @@
     flex-wrap: wrap;
   }
 
+.sticky img {
+    width: 100px;
+}
 
 #body-div {
     background-color: #25852a;
@@ -55,6 +58,10 @@
     /*width: 94px;*/
     padding: 2px;
     
+}
+
+button {
+    display: inline;
 }
 
 @media only screen and (min-width: 768px) {
