@@ -60,12 +60,10 @@ function pickRandomCard() {
       // Picks a random card
       var cardPicked = cardImages[randomCard];
       console.log(cardPicked);
-
-      
       
       // Adds the image of the random card to the respective div container
       let z = document.createElement('img');
-      let z1 = document.getElementById('container' + i).appendChild(z);
+      let z1 = document.getElementById('container1-' + i).appendChild(z);
       let z2 = cardPicked.cardImage;
       z1.setAttribute('src', z2);
 
@@ -81,7 +79,7 @@ function pickRandomCard() {
    };
 
    // after time elapses, the cards picked from the deck disappear
-   setTimeout(hideCardsPickedDivs, 10000000);
+   setTimeout(hideCardsPickedDivs, 8000);
 
    
 
@@ -90,11 +88,11 @@ function pickRandomCard() {
 
 
 function hideCardsPickedDivs() {
-   document.getElementById('container1').style.display = 'none';
-   document.getElementById('container2').style.display = 'none';
-   document.getElementById('container3').style.display = 'none';
-   document.getElementById('container4').style.display = 'none';
-   document.getElementById('container5').style.display = 'none';
+   document.getElementById('container1-1').style.display = 'none';
+   document.getElementById('container1-2').style.display = 'none';
+   document.getElementById('container1-3').style.display = 'none';
+   document.getElementById('container1-4').style.display = 'none';
+   document.getElementById('container1-5').style.display = 'none';
 
    displayAllCards();
 };
@@ -108,17 +106,22 @@ function hideCardsPickedDivs() {
 
       function displayAllCards() {
          for (i=0; i<52; i++) {
+      
+         
+////////////////
+
             let j = cardImages[i].cardImage;
             let k = document.createElement('img');
-            let l = document.getElementById('container6').appendChild(k);
+            let l = document.getElementById('container7').appendChild(k);
             l.setAttribute('src', j);
-            l.setAttribute('width', '100');
+            //l.setAttribute('width', '100');
             l.setAttribute('class', 'readyforselection');
             l.setAttribute('data-cardnumber', i);
-            }
+         };
+      };
             displayPlayersButtons();
-   
-
+      
+      
          
 
       // on clicking, the player's selected cards are added to a new array playerSelectionOfCards
@@ -146,14 +149,13 @@ function hideCardsPickedDivs() {
       $('#playerbutton').on('click', runComparison);
 
      
-};
 
 function displayCardsPickedDivs() {
-   document.getElementById('container1').style.display = 'flex';
-   document.getElementById('container2').style.display = 'flex';
-   document.getElementById('container3').style.display = 'flex';
-   document.getElementById('container4').style.display = 'flex';
-   document.getElementById('container5').style.display = 'flex';
+   document.getElementById('container1-1').style.display = 'flex';
+   document.getElementById('container1-2').style.display = 'flex';
+   document.getElementById('container1-3').style.display = 'flex';
+   document.getElementById('container1-4').style.display = 'flex';
+   document.getElementById('container1-5').style.display = 'flex';
 };
 
 

@@ -1,15 +1,23 @@
 #body-div {
     background-color: #25852a;
     
-    
-
 }
 
-#body-div div {
+#container7 {
+    /*padding: 5px;*/
+    display: flex;
+    /*align-items: center;*/
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    /*padding: 5px;*/
+}
+
+/*#body-div div {
     border-style: none;
     border-width: 2px;
     padding: 0 5px 5px 5px;
-}
+}*/
 
 .random-card img {
     border-style: none;
@@ -20,13 +28,26 @@
     margin-top: -33px;
 }
 
-#container1 img {
+#container1-1 img {
     margin-top: 5px;
 }
 
-@media only screen and (min-width: 600px) {
+
+
+.readyforselection {
+    width: 90px;
+    padding: 2px;
+}
+
+.card-span {
+    /*width: 94px;*/
+    padding: 2px;
+    
+}
+
+@media only screen and (min-width: 768px) {
     .random-card img {
-      max-height: 280px;
+        max-height: 280px;
     }
 }
 
@@ -35,6 +56,5 @@
         margin-top: -150px;
         max-width: 180px;
         height: auto;
-
-    }
+        }
 }
