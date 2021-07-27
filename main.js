@@ -1,3 +1,6 @@
+
+
+
 // An array of the numbers component of a standard 52 pack of cards
 let cardNumbers = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
 
@@ -94,21 +97,37 @@ function hideCardsPickedDivs() {
    document.getElementById('container1-4').style.display = 'none';
    document.getElementById('container1-5').style.display = 'none';
 
-   displayAllCards();
+   loadUserInterface();
 };
-
-
-
-
 
 
 // all 52 cards in the deck appear for player selection
 
-      function displayAllCards() {
-         for (i=0; i<52; i++) {
-      
+      function loadUserInterface() {
+
+         document.getElementById('container8').style.display = 'flex';
          
-////////////////
+         
+         /*let playerStickyArea = document.createElement('div');
+         let m = document.getElementById('body-div').appendChild(playerStickyArea);
+         m.setAttribute('id', 'container8');*/
+
+         let playerSubmitButton = document.createElement('button');
+         document.getElementById('container6').appendChild(playerSubmitButton);
+         playerSubmitButton.innerHTML='SUBMIT SELECTION';
+         playerSubmitButton.setAttribute('id', 'player-submit-button');
+
+         let playerRemoveButton = document.createElement('button');
+         document.getElementById('container6').appendChild(playerRemoveButton);
+         playerRemoveButton.innerHTML='REMOVE';
+         playerRemoveButton.setAttribute('id', 'player-remove-button');
+
+         var playerClearAllButton = document.createElement('button');
+         document.getElementById('container6').appendChild(playerClearAllButton);
+         playerClearAllButton.innerHTML='CLEAR ALL';
+         playerClearAllButton.setAttribute('id', 'player-clearall-button');
+
+         for (i=0; i<52; i++) {
 
             let j = cardImages[i].cardImage;
             let k = document.createElement('img');
@@ -118,8 +137,25 @@ function hideCardsPickedDivs() {
             l.setAttribute('class', 'readyforselection');
             l.setAttribute('data-cardnumber', i);
          };
+
+         $('.readyforselection').on('click', pushToPlayerSelectionOfCards);
+
+      
+         function pushToPlayerSelectionOfCards() {
+
+         if (playerSelectionOfCards.length < 5) {
+            let x = $(this).attr("data-cardnumber"); 
+            playerSelectionOfCards.push(x);
+            console.log(playerSelectionOfCards);
+         }  else {
+            alert('Too many cards selected'); 
+         } 
+      }
+
+      $('#player-submit-button').on('click', runComparison);
+
       };
-            displayPlayersButtons();
+            
       
       
          
@@ -127,26 +163,9 @@ function hideCardsPickedDivs() {
       // on clicking, the player's selected cards are added to a new array playerSelectionOfCards
       
 
-      $('.readyforselection').on('click', pushToPlayerSelectionOfCards);
       
       
-
       
-      function pushToPlayerSelectionOfCards() {
-
-         
-         
-         if (playerSelectionOfCards.length < 5) {
-            let x = $(this).attr("data-cardnumber"); 
-            playerSelectionOfCards.push(x);
-            console.log(playerSelectionOfCards);
-         }  else {
-            alert('Too many cards selected');
-            
-         } 
-      }
-
-      $('#playerbutton').on('click', runComparison);
 
      
 
@@ -159,7 +178,6 @@ function displayCardsPickedDivs() {
 };
 
 
-
 // empty the cardsPicked array
 
 function emptyCardsPicked() {
@@ -168,13 +186,13 @@ console.log(cardsPicked);
 pickRandomCard();
 };
 
-// displays users buttons
+// displays player's buttons
 
 function displayPlayersButtons() {
-   let playerButton = document.createElement('button');
-   document.getElementById('container6').appendChild(playerButton);
-   playerButton.innerHTML='SUBMIT SELECTION';
-   playerButton.setAttribute('id', 'playerbutton');
+   
+
+   
+
 };
 
 // compares playerSelectionOfCards versus cardsPicked on clicking "SUBMIT SELECTION" button
@@ -220,11 +238,11 @@ function clearArrays() {
 // removes any existing images within the div containers 1-6
 function clearImagesFromCardsPickedDivs() {
    for (i=1; i<6; i++) {
-   let x = document.getElementById('container' + i);
+   let x = document.getElementById('container1-' + i);
    x.removeChild(x.childNodes[0]);
    };
    document.getElementById('container6').innerHTML='';
-
+   document.getElementById('container7').innerHTML='';
    pickRandomCard();
    
 };
