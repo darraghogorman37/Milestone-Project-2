@@ -36,7 +36,7 @@ for(let i=0; i<52; i++) {
       cardNumber: i,
       cardImage: ""
    };
-   card.cardImage = 'assets/images/' + cards[i] + '.jpg';
+   card.cardImage = 'assets/images1/' + cards[i] + '.jpg';
    cardImages.push(card); 
    
 }
@@ -105,22 +105,25 @@ function hideCardsPickedDivs() {
 
 function loadUserInterface() {
 
-   document.getElementById('container8').style.display = 'flex';
+   document.getElementById('container8').style.display = 'block';
    
    let playerSubmitButton = document.createElement('button');
    document.getElementById('container6').appendChild(playerSubmitButton);
    playerSubmitButton.innerHTML='SUBMIT SELECTION';
    playerSubmitButton.setAttribute('id', 'player-submit-button');
+   document.getElementById('player-submit-button').style.fontSize = '10px';
    
    let playerRemoveButton = document.createElement('button');
    document.getElementById('container6').appendChild(playerRemoveButton);
    playerRemoveButton.innerHTML='REMOVE';
    playerRemoveButton.setAttribute('id', 'player-remove-button');
+   document.getElementById('player-remove-button').style.fontSize = '10px';
 
    var playerClearAllButton = document.createElement('button');
    document.getElementById('container6').appendChild(playerClearAllButton);
    playerClearAllButton.innerHTML='CLEAR ALL';
-   playerClearAllButton.setAttribute('id', 'player-clearall-button');    
+   playerClearAllButton.setAttribute('id', 'player-clearall-button');
+   document.getElementById('player-clearall-button').style.fontSize = '10px';    
          
    for (i=0; i<52; i++) {
 
@@ -156,6 +159,9 @@ function loadUserInterface() {
 
          let y4 = y2.appendChild(y3);
          y4.setAttribute('src', y1);
+         y4.setAttribute('id', 'selected-card');
+
+         
 
       } else {
             alert('Too many cards selected'); 

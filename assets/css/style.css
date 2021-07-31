@@ -1,3 +1,7 @@
+/*img {
+        vertical-align: baseline !important;
+}*/
+
 .sticky {
     position: -webkit-sticky;
     position: sticky;
@@ -10,7 +14,7 @@
   }
 
 .sticky img {
-    width: 100px;
+    width: 90px;
 }
 
 #body-div {
@@ -50,24 +54,51 @@
 
 
 .readyforselection {
-    width: 90px;
+    width: 100px;
     padding: 2px;
 }
 
 .card-span {
     /*width: 94px;*/
-    padding: 2px;
+    display: inline-block;
+    width: 80px;
+    height: 117px;
+    /*padding: 5px;*/
+    border-style: solid;
+    border-radius: 2px;
+    border-color: black;
+    
     
 }
 
+#selected-card {
+    vertical-align: baseline;
+}
+
+
 button {
     display: inline;
+    font-size: 9px;
 }
+
+
+@media only screen and (max-width: 768px) {
+    .sticky img {
+        width: 70px;
+    }
+
+    .readyforselection {
+        width: 70px;
+    }
+
+}
+
 
 @media only screen and (min-width: 768px) {
     .random-card img {
         max-height: 280px;
     }
+
 }
 
 @media only screen and (min-width: 992px) {
