@@ -105,7 +105,7 @@ function hideCardsPickedDivs() {
 
 function loadUserInterface() {
 
-   document.getElementById('container8').style.display = 'block';
+   document.getElementById('container9').style.display = 'flex';
    
    let playerSubmitButton = document.createElement('button');
    document.getElementById('container6').appendChild(playerSubmitButton);

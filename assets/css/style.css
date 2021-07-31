@@ -32,6 +32,26 @@
     /*padding: 5px;*/
 }
 
+/*#container9 {
+    
+}*/
+
+/*#container6  {
+    position: absolute;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+}*/
+
+#container8 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
 /*#body-div div {
     border-style: none;
     border-width: 2px;
