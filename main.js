@@ -1,5 +1,8 @@
-
-
+// set the initial player's score to 0
+var playerScore = 0;
+console.log(typeof(playerScore));
+var scoreSpan = document.getElementById('span-selection-6');
+scoreSpan.innerHTML = '<p>' + playerScore + '</p>';
 
 // An array of the numbers component of a standard 52 pack of cards
 let cardNumbers = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
@@ -257,8 +260,14 @@ function runComparison() {
 
    if (JSON.stringify(playerSelectionOfCards) === JSON.stringify(cardNumbersFromCardsPicked)) {
       alert("WELL DONE");
+      playerScore = playerScore + 1;
+      console.log(playerScore);
+      scoreSpan.innerHTML = '<p>' + playerScore + '</p>';
    } else {
       alert("SORRY");
+      playerScore = 0;
+      console.log(playerScore);
+      scoreSpan.innerHTML = '<p>' + playerScore + '</p>';
    };
 
    clearArrays();
