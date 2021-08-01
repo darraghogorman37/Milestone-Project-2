@@ -106,6 +106,8 @@ function hideCardsPickedDivs() {
 function loadUserInterface() {
 
    document.getElementById('container9').style.display = 'flex';
+
+   document.getElementById('container8').style.display = 'flex';
    
    let playerSubmitButton = document.createElement('button');
    document.getElementById('container6').appendChild(playerSubmitButton);
@@ -165,10 +167,25 @@ function loadUserInterface() {
 
       } else {
             alert('Too many cards selected'); 
-         } 
+         }
+         
+      
+         
+
    }
 
    $('#player-submit-button').on('click', runComparison);
+
+   $('#player-remove-button').on('click', removeLastCardAdded);
+         function removeLastCardAdded() {
+            
+            let f1 = playerSelectionOfCards.length;
+            let f2 = document.getElementById('span-selection-' + f1);
+            f2.removeChild(f2.childNodes[0]);
+            
+            playerSelectionOfCards.pop();
+            console.log(playerSelectionOfCards);
+         }
 
 }
    
@@ -256,7 +273,7 @@ function clearImagesFromCardsPickedDivs() {
 
    y = document.getElementById('container6').innerHTML='';
    
-
+   document.getElementById('container8').style.display = 'none';
 
    pickRandomCard();
    
