@@ -167,24 +167,37 @@ function loadUserInterface() {
 
       } else {
             alert('Too many cards selected'); 
-         }
-         
-      
-         
+         }   
 
    }
 
    $('#player-submit-button').on('click', runComparison);
 
+   $('#player-clearall-button').on('click', clearAll);
+
+      function clearAll () {
+         playerSelectionOfCards = [];
+         console.log(playerSelectionOfCards);
+
+         for (i=1; i<6; i++) {
+
+            f2 = document.getElementById('span-selection-' + i);
+            f2.innerHTML='';
+
+         }
+
+      }
+
    $('#player-remove-button').on('click', removeLastCardAdded);
-         function removeLastCardAdded() {
+         
+      function removeLastCardAdded() {
             
-            let f1 = playerSelectionOfCards.length;
-            let f2 = document.getElementById('span-selection-' + f1);
-            f2.removeChild(f2.childNodes[0]);
+         let f1 = playerSelectionOfCards.length;
+         let f2 = document.getElementById('span-selection-' + f1);
+         f2.removeChild(f2.childNodes[0]);
             
-            playerSelectionOfCards.pop();
-            console.log(playerSelectionOfCards);
+         playerSelectionOfCards.pop();
+         console.log(playerSelectionOfCards);
          }
 
 }
