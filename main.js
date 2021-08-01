@@ -171,7 +171,16 @@ function loadUserInterface() {
 
    }
 
-   $('#player-submit-button').on('click', runComparison);
+   $('#player-submit-button').on('click', checkPlayerSelectionOfCards);
+
+      function checkPlayerSelectionOfCards() {   
+   
+         if (playerSelectionOfCards.length === 5) {
+            runComparison();
+         } else {
+            alert('You must select 5 cards');
+         };
+      };
 
    $('#player-clearall-button').on('click', clearAll);
 
