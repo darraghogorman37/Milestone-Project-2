@@ -1,8 +1,8 @@
 // set the initial player's score to 0
 var playerScore = 0;
 console.log(typeof(playerScore));
-var scoreSpan = document.getElementById('span-selection-6');
-scoreSpan.innerHTML = '<p>' + playerScore + '</p>';
+var scoreSpan = document.getElementById('container10');
+scoreSpan.innerHTML = '<p>Score:' + playerScore + '<br>Current Difficulty Level:</p>';
 
 // An array of the numbers component of a standard 52 pack of cards
 let cardNumbers = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
@@ -116,19 +116,19 @@ function loadUserInterface() {
    document.getElementById('container6').appendChild(playerSubmitButton);
    playerSubmitButton.innerHTML='SUBMIT SELECTION';
    playerSubmitButton.setAttribute('id', 'player-submit-button');
-   document.getElementById('player-submit-button').style.fontSize = '10px';
+   /*document.getElementById('player-submit-button').style.fontSize = '10px';*/
    
    let playerRemoveButton = document.createElement('button');
    document.getElementById('container6').appendChild(playerRemoveButton);
    playerRemoveButton.innerHTML='REMOVE';
    playerRemoveButton.setAttribute('id', 'player-remove-button');
-   document.getElementById('player-remove-button').style.fontSize = '10px';
+   /*document.getElementById('player-remove-button').style.fontSize = '10px';*/
 
    var playerClearAllButton = document.createElement('button');
    document.getElementById('container6').appendChild(playerClearAllButton);
    playerClearAllButton.innerHTML='CLEAR ALL';
    playerClearAllButton.setAttribute('id', 'player-clearall-button');
-   document.getElementById('player-clearall-button').style.fontSize = '10px';    
+   /*document.getElementById('player-clearall-button').style.fontSize = '10px';*/  
          
    for (i=0; i<52; i++) {
 
