@@ -12,7 +12,7 @@
 
 #spacer {
     background-color: green;
-    min-height: 20px;
+    min-height: 5px;
     position: sticky;
     top: 0px;
 }
@@ -20,7 +20,7 @@
 .sticky {
     position: -webkit-sticky;
     position: sticky;
-    top: 20px;
+    top: 5px;
     background-color: green;
     display: none;
     justify-content: center;
@@ -34,7 +34,7 @@
   }
 
 .sticky img {
-    width: 90px;
+    width: 60px;
 }
 
 #body-div {
@@ -108,8 +108,8 @@
     /*width: 94px;*/
     display: inline-block;
     margin: 3px;
-    width: 56px;
-    height: 82px;
+    width: 65px;
+    height: 98px;
     /*padding: 5px;*/
     border-style: solid;
     border-radius: 2px;
@@ -126,7 +126,7 @@
 button {
     font-size: 12px;
     margin: 2px;
-    height: 50px;
+    height: 40px;
     font-weight: bold;
     background-color: red;
     border-radius: 4px;
@@ -135,16 +135,17 @@ button {
 }
 
 
-@media only screen and (max-width: 768px) {
+/*@media only screen and (max-width: 768px) {
     .sticky img {
         width: 50px;
-    }
+    }*/
+    
 
     .readyforselection {
         width: 70px;
     }
 
-}
+
 
 
 @media only screen and (min-width: 768px) {

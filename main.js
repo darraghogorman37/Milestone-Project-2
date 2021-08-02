@@ -262,7 +262,7 @@ function runComparison() {
       alert("WELL DONE");
       playerScore = playerScore + 1;
       console.log(playerScore);
-      scoreSpan.innerHTML = '<p>' + playerScore + '</p>';
+      scoreSpan.innerHTML = '<p>Score:' + playerScore + '<br>Current Difficulty Level:</p>';
    } else {
       alert("SORRY");
       playerScore = 0;
