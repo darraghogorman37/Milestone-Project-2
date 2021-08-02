@@ -1,8 +1,15 @@
+// set initial time for displaying the 5 cards (timeOut) picked from deck to 10s
+var timeOut = 10000;
+
+// set the intial diffulty level (difficultyLevel) to Very Easy
+
+var difficultyLevel = 'Very Easy'
+
 // set the initial player's score to 0
 var playerScore = 0;
 console.log(typeof(playerScore));
 var scoreSpan = document.getElementById('container10');
-scoreSpan.innerHTML = '<p>Score:' + playerScore + '<br>Current Difficulty Level:</p>';
+scoreSpan.innerHTML = '<p>Score:' + playerScore + '<br>Current Difficulty Level:' + difficultyLevel + '</p>';
 
 // An array of the numbers component of a standard 52 pack of cards
 let cardNumbers = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
@@ -85,7 +92,10 @@ function pickRandomCard() {
    };
 
    // after time elapses, the cards picked from the deck disappear
-   setTimeout(hideCardsPickedDivs, 5000);
+   
+   
+   console.log(timeOut);
+   setTimeout(hideCardsPickedDivs, timeOut);
 
    
 
@@ -260,14 +270,48 @@ function runComparison() {
 
    if (JSON.stringify(playerSelectionOfCards) === JSON.stringify(cardNumbersFromCardsPicked)) {
       alert("WELL DONE");
+
+      // add one to the player's score
       playerScore = playerScore + 1;
       console.log(playerScore);
-      scoreSpan.innerHTML = '<p>Score:' + playerScore + '<br>Current Difficulty Level:</p>';
+
+      // take 249 from the value of timeOut
+      timeOut = timeOut - 1000;
+      console.log(timeOut);
+
+      // compute the difficultyLevel
+
+      if (timeOut <= 10000 && timeOut > 9000) {
+         difficultyLevel = 'Very Easy';
+       
+      } else if (timeOut <= 9000 && timeOut > 8000) {
+         difficultyLevel = 'Easy';
+
+      } else if (timeOut <= 8000 && timeOut > 6500) {
+      difficultyLevel = 'Average';
+
+      } else if (timeOut <= 6500 && timeOut > 4500) {
+      difficultyLevel = 'Hard';
+
+      } else if (timeOut <= 4500) {
+      difficultyLevel = 'Very Hard';
+      }
+
+      // display the computed score and difficulty level
+      
+      scoreSpan.innerHTML = '<p>Score:' + playerScore + '<br>Current Difficulty Level:' + difficultyLevel + '</p>';
+      
+      console.log(timeOut);
+      console.log(difficultyLevel);
+
+
    } else {
       alert("SORRY");
       playerScore = 0;
+      difficultyLevel = 'Easy'
       console.log(playerScore);
-      scoreSpan.innerHTML = '<p>' + playerScore + '</p>';
+      console.log(difficultyLevel);
+      scoreSpan.innerHTML = '<p>Score:' + playerScore + '<br>Current Difficulty Level:' + difficultyLevel + '</p>';
    };
 
    clearArrays();
