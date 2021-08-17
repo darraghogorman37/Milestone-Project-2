@@ -129,14 +129,43 @@ button {
     border-color: black;
 }
 
-/* laptop size screens */
+/* tablet size screens */
 @media only screen and (min-width: 768px) {
     .random-card img { /* card images at start of round */ 
         max-height: 280px;
     }
+
+    .readyforselection {
+        width: 90px;
+    }
+
+    #container6 {
+        justify-content: space-evenly;
+        margin: 10px;
+    }
+
+    #container10 p {
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 20px;
+        height: 50px;
+    }
+
+    .sticky img {
+        width: 87px;
+    }
+
+    .card-span {
+    width: 93px;
+    height: 140px;
+    }
+
+
 }
 
-/* desktop size screens */
+/* laptop size screens */
 @media only screen and (min-width: 992px) {
     .random-card img {   /* card images at start of round */
         margin-top: -150px;
