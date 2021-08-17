@@ -7,7 +7,8 @@ var difficultyLevel = 'Very Easy'
 
 // set the initial player's score to 0
 var playerScore = 0;
-console.log(typeof(playerScore));
+
+// displays the current difficulty level
 var scoreSpan = document.getElementById('container10');
 scoreSpan.innerHTML = '<p>Score:' + playerScore + '<br>Current Difficulty Level:' + difficultyLevel + '</p>';
 
@@ -30,7 +31,7 @@ for(var i = 0; i < cardNumbers.length; i++)
 
 var playerSelectionOfCards = [];
 
-// prints the array of the 52 cards, for testing only, TO BE DELETED LATER
+// prints the array of the 52 cards
 function printAllCards() {
 console.log(cards)};
 
@@ -51,7 +52,7 @@ for(let i=0; i<52; i++) {
    
 }
 
-// prints the images array containing 52 "inner" arrays, each representing a card, for testing only, TO BE DELETED LATER
+// prints the images array containing 52 "inner" arrays, each representing a card
 console.log(cardImages);
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -60,12 +61,11 @@ console.log(cardImages);
 var cardsPicked = [];
 
 pickRandomCard();
+
 function pickRandomCard() {
    
    for (var i=1; i<6; i++) {
    
-      
-
       // produces a random integer between 0 and 51
       let randomCard = Math.floor((Math.random())*52);
       console.log(randomCard);
@@ -87,21 +87,17 @@ function pickRandomCard() {
       // Logs the array of 5 cards picked randomly   
       console.log(cardsPicked); 
 
-      
-      
    };
 
    // after time elapses, the cards picked from the deck disappear
    
-   
    console.log(timeOut);
    setTimeout(hideCardsPickedDivs, timeOut);
-
-   
 
 };
 
 
+// hides the cards from the deck
 
 function hideCardsPickedDivs() {
    document.getElementById('container1-1').style.display = 'none';
@@ -114,32 +110,33 @@ function hideCardsPickedDivs() {
 };
 
 
-// all 52 cards in the deck appear for player selection
+// all 52 cards in the deck appear for player selection, with player buttons and card placeholders
 
 function loadUserInterface() {
 
-   document.getElementById('container9').style.display = 'flex';
+   document.getElementById('container9').style.display = 'flex'; // player interface area
 
-   document.getElementById('container8').style.display = 'flex';
+   document.getElementById('container8').style.display = 'flex'; // <div> for placholders
    
+   // creates SUBMIT button
    let playerSubmitButton = document.createElement('button');
    document.getElementById('container6').appendChild(playerSubmitButton);
    playerSubmitButton.innerHTML='SUBMIT SELECTION';
    playerSubmitButton.setAttribute('id', 'player-submit-button');
-   /*document.getElementById('player-submit-button').style.fontSize = '10px';*/
    
+   // creates REMOVE button
    let playerRemoveButton = document.createElement('button');
    document.getElementById('container6').appendChild(playerRemoveButton);
    playerRemoveButton.innerHTML='REMOVE';
    playerRemoveButton.setAttribute('id', 'player-remove-button');
-   /*document.getElementById('player-remove-button').style.fontSize = '10px';*/
 
+   // creates CLEAR ALL button
    var playerClearAllButton = document.createElement('button');
    document.getElementById('container6').appendChild(playerClearAllButton);
    playerClearAllButton.innerHTML='CLEAR ALL';
    playerClearAllButton.setAttribute('id', 'player-clearall-button');
-   /*document.getElementById('player-clearall-button').style.fontSize = '10px';*/  
-         
+     
+   // creates and displays images of all 52 cards      
    for (i=0; i<52; i++) {
 
       let j = cardImages[i].cardImage;
@@ -152,6 +149,7 @@ function loadUserInterface() {
 
    $('.readyforselection').on('click', pushToPlayerSelectionOfCards); // on clicking, the player's selected cards are added to a new array playerSelectionOfCards
 
+   // places images in placeholders upon clicking by the player
    function pushToPlayerSelectionOfCards() {
 
       if (playerSelectionOfCards.length < 5) {
@@ -159,8 +157,7 @@ function loadUserInterface() {
          let x = $(this).attr("data-cardnumber"); 
          playerSelectionOfCards.push(x);
          console.log(playerSelectionOfCards);
-
-            
+ 
          let y1 = cardImages[x].cardImage;
          console.log(y1);
          console.log(typeof y1);
@@ -176,14 +173,13 @@ function loadUserInterface() {
          y4.setAttribute('src', y1);
          y4.setAttribute('id', 'selected-card');
 
-         
-
       } else {
-            alert('Too many cards selected'); 
+            alert('Too many cards selected'); // alert player if he/she attempts to load too many cards into the placeholders
          }   
 
    }
 
+   // if player clicks submit, runs a comparison between his selection and the randomly generated selection
    $('#player-submit-button').on('click', checkPlayerSelectionOfCards);
 
       function checkPlayerSelectionOfCards() {   
@@ -191,10 +187,11 @@ function loadUserInterface() {
          if (playerSelectionOfCards.length === 5) {
             runComparison();
          } else {
-            alert('You must select 5 cards');
+            alert('You must select 5 cards'); // alerts player if 5 cards have not been picked and tries to submit
          };
       };
 
+   // removes all cards selected by the player from their placeholders   
    $('#player-clearall-button').on('click', clearAll);
 
       function clearAll () {
@@ -210,6 +207,7 @@ function loadUserInterface() {
 
       }
 
+   // removes the last card selected by the player from its placeholder   
    $('#player-remove-button').on('click', removeLastCardAdded);
          
       function removeLastCardAdded() {
@@ -224,10 +222,7 @@ function loadUserInterface() {
 
 }
    
-         
-
-
-
+// displays the randomly generated 5 cards
 function displayCardsPickedDivs() {
    document.getElementById('container1-1').style.display = 'flex';
    document.getElementById('container1-2').style.display = 'flex';
@@ -237,26 +232,23 @@ function displayCardsPickedDivs() {
 };
 
 
-// empty the cardsPicked array
-
+// empty the cardsPicked array (array for randomly generated 5 cards)
 function emptyCardsPicked() {
 cardsPicked.splice(0,5);
 console.log(cardsPicked);
 pickRandomCard();
 };
 
-// displays player's buttons
-
+/* displays player's buttons
 function displayPlayersButtons() {
 
-};
+};*/
 
 // compares playerSelectionOfCards versus cardsPicked on clicking "SUBMIT SELECTION" button
 
-let cardNumbersFromCardsPicked = [];
+let cardNumbersFromCardsPicked = []; // set to an empty array initially. Takes a number 0-51 from the cardsPicked array
 
-function runComparison() {
-   
+function runComparison() { // runs a comparison between the players selected cards and the randomly picked cards
    
    for (i=0; i<5; i++) {
       let x = cardsPicked[i].cardNumber;
@@ -279,7 +271,7 @@ function runComparison() {
       timeOut = timeOut - 1000;
       console.log(timeOut);
 
-      // compute the difficultyLevel
+      // compute the new difficultyLevel
 
       if (timeOut <= 10000 && timeOut > 9000) {
          difficultyLevel = 'Very Easy';
@@ -331,7 +323,7 @@ function clearArrays() {
 
 };
 
-// removes any existing images within the div containers 1-5, 7 + 8 and hides the buttons
+// removes any existing images within the div containers 1-5, 7 + 8 and removes the buttons
 function clearImagesFromCardsPickedDivs() {
    for (i=1; i<6; i++) {
    let x = document.getElementById('container1-' + i);

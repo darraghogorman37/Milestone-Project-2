@@ -5,9 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    
-    
-
     <!--Link to bootstrap .css files-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
@@ -16,42 +13,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
 
-    <!--Link to my .css file-->
+    <!--Link to stlye.css file-->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-    
     <title>5 Card Memory Training</title>
 </head>
 
 <body>
 
-  
-  
-  
-
-  <div id='body-div'>
-    <div id="spacer"></div>
-    <div id="container9" class="sticky">
+  <div id='body-div'> <!--requried to prevent issues with white borders at screen periphary-->
+    <div id="spacer"></div> <!--requried to prevent issues with white borders at screen periphary-->
+    <div id="container9" class="sticky"> <!--container9 for player interface area-->
     
-      <div id='container8'>
-        <span id='span-selection-1' class = "card-span"></span>
+      <div id='container8'> <!--container8 for placeholders for player's selected cards-->
+        <span id='span-selection-1' class = "card-span"></span> <!--each span here represents a placeholder-->
         <span id='span-selection-2' class = "card-span"></span>
         <span id='span-selection-3' class = "card-span"></span>
         <span id='span-selection-4' class = "card-span"></span>
         <span id='span-selection-5' class = "card-span"></span>
-        <!--<span id='span-selection-6' class = "card-span"></span> -->
-
       </div>
 
-      <div id="container6"></div>
+      <div id="container6"></div> <!--container6 for player buttons-->
 
-      <div id="container10"></div>
+      <div id="container10"></div> <!--container10 for player score and difficulty level-->
 
     </div>
 
-
-
-    <div class="container">
+    <!--bootstrap grid system for displaying the 5 randomly generated cards-->
+    <div class="container"> 
       <div class="row">
         <div class="col-4 col-sm-4 random-card" id="container1-1"></div>
       </div>
@@ -69,26 +58,20 @@
       </div>
     </div>
 
+    <div id="container7"></div> <!--container7 for images of 52 cards available for player selection-->
     
-        
-      
-
-    
-      <div id="container7">
-
-      </div>
-    
-
   </div>
 
-    
-    <script
+  <!--JQuery script file-->  
+  <script
   src="https://code.jquery.com/jquery-3.6.0.js"
   integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-  crossorigin="anonymous"></script>
-    <script type="text/javascript" src="main.js"></script>
+  crossorigin="anonymous">
+  </script>
+
+  <!-- main.js core javascript file-->  
+  <script type="text/javascript" src="main.js"></script>
     
 </body>
-
 
 </html>
