@@ -3,14 +3,16 @@
     border-style: solid;
     border-width: 2px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
     flex-wrap: wrap;
+    padding: 10px;
 }
 
 /* Goolge fonts Teko font for Score + Difficulty Level display */
 #container10 p {
     font-family: 'Teko', sans-serif;
+    margin-bottom: 0px;
 }
 
 /* to prevent issues at screen periphary */
@@ -43,7 +45,8 @@
 
 /* background color for the screen */
 #body-div {
-    background-color: green; 
+    background-color: green;
+    min-height: 800px; 
 }
 
 /* 52 cards for player selection*/
@@ -129,7 +132,17 @@ button {
     border-color: black;
 }
 
-/* tablet size screens */
+#instructions-button {
+    background-color: grey;
+}
+
+/*#restart-button a {
+    font-size: 12px;
+    text-decoration: none;
+    color: black;*/
+}
+
+/* tablet  + laptop size screens */
 @media only screen and (min-width: 768px) {
     .random-card img { /* card images at start of round */ 
         max-height: 280px;
@@ -162,14 +175,33 @@ button {
     height: 140px;
     }
 
-
+    #body-div {
+        min-height: 1400px; 
+    }
 }
 
-/* laptop size screens */
+/* larger size screens */
 @media only screen and (min-width: 992px) {
     .random-card img {   /* card images at start of round */
         margin-top: -150px;
         max-width: 180px;
         height: auto;
+    }
+
+    .readyforselection {
+        width: 100px;
+    }
+
+    .card-span {
+        width: 132px;
+        height: 200px;
+    }
+
+    .sticky img {
+        width: 127px;
+    }
+
+    #body-div {
+        min-height: 2000px;
     }
 }

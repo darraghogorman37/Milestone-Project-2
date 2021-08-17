@@ -10,7 +10,16 @@ var playerScore = 0;
 
 // displays the current difficulty level
 var scoreSpan = document.getElementById('container10');
-scoreSpan.innerHTML = '<p>Score:' + playerScore + '<br>Current Difficulty Level:' + difficultyLevel + '</p>';
+scoreSpan.innerHTML = '<span><p>Score: ' + playerScore + '<br>Current Difficulty Level: ' + difficultyLevel + '<br>Click On Cards Below to Fill Your Selection Above</p></span>'
+                        + '<span><button id="instructions-button">Instructions</button></span>';
+
+
+$('#instructions-button').on('click', displayInstructions);
+
+function displayInstructions() {
+   scoreSpan.innerHTML = '<p>Click On Cards Below to Fill Your Selection Above</p>'
+
+}
 
 // An array of the numbers component of a standard 52 pack of cards
 let cardNumbers = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
