@@ -270,7 +270,7 @@ function runComparison() { // runs a comparison between the players selected car
       console.log(playerSelectionOfCards);
 
    if (JSON.stringify(playerSelectionOfCards) === JSON.stringify(cardNumbersFromCardsPicked)) {
-      alert("WELL DONE");
+      displayCorrectAnswer ();
 
       // add one to the player's score
       playerScore = playerScore + 1;
@@ -307,12 +307,12 @@ function runComparison() { // runs a comparison between the players selected car
 
 
    } else {
-      alert("SORRY");
+      displayIncorrectAnswer ();
       playerScore = 0;
       difficultyLevel = 'Easy'
       console.log(playerScore);
       console.log(difficultyLevel);
-      scoreSpan.innerHTML = '<p>Score:' + playerScore + '<br>Current Difficulty Level:' + difficultyLevel + '</p>';
+      
    };
 
    clearArrays();
@@ -321,15 +321,20 @@ function runComparison() { // runs a comparison between the players selected car
 
 // clears all arrays to empty
 function clearArrays() {
+
+   setTimeout (innerClearArrays, 3000);
+
+   function innerClearArrays () {
    cardsPicked = [];
    console.log(cardsPicked);
    playerSelectionOfCards = [];
    console.log(playerSelectionOfCards);
    cardNumbersFromCardsPicked = [];
    console.log(cardNumbersFromCardsPicked);
+   scoreSpan.innerHTML = '<p>Score:' + playerScore + '<br>Current Difficulty Level:' + difficultyLevel + '</p>';
 
    clearImagesFromCardsPickedDivs();
-
+   }
 };
 
 // removes any existing images within the div containers 1-5, 7 + 8 and removes the buttons
@@ -354,6 +359,28 @@ function clearImagesFromCardsPickedDivs() {
    pickRandomCard();
    
 };
+
+function displayCorrectAnswer () {
+
+   setTimeout(innerDisplayCorrectAnswer, 3000)
+   
+   function innerDisplayCorrectAnswer() {
+      
+      scoreSpan.innerHTML ='<p>WELL DONE!!!</p>';
+   }
+}
+
+/*function displayIncorrectAnswer () {*/
+
+   
+
+   function displayIncorrectAnswer() {
+
+      scoreSpan.innerHTML ='<p>Aw...tough luck, try again!</p>';
+      
+   }
+
+
 
 
 
