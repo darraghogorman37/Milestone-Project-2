@@ -8,18 +8,26 @@ var difficultyLevel = 'Very Easy'
 // set the initial player's score to 0
 var playerScore = 0;
 
+// set the round number of the current game
+var roundNumber = playerScore + 1;
+
+// set the number of rounds to go until completion
+var roundsUntilCompletion = 8;
+
 // displays the current difficulty level
 var scoreSpan = document.getElementById('container10');
-scoreSpan.innerHTML = '<span><p>Score: ' + playerScore + '<br>Current Difficulty Level: ' + difficultyLevel + '<br>Click On Cards Below to Fill Your Selection Above</p></span>'
-                        + '<span><button id="instructions-button">Instructions</button></span>';
+scoreSpan.innerHTML = '<span><p>Score: ' + playerScore + '<br>Current Difficulty Level: ' + difficultyLevel + '</p></span>' +
+
+                     '<span><p>Round Number: ' + roundNumber + '<br>Rounds Until Completion: ' + roundsUntilCompletion + '</p></span>';
+                        
 
 
-$('#instructions-button').on('click', displayInstructions);
+/*$('#instructions-button').on('click', displayInstructions);
 
 function displayInstructions() {
    scoreSpan.innerHTML = '<p>Click On Cards Below to Fill Your Selection Above</p>'
 
-}
+}*/
 
 // An array of the numbers component of a standard 52 pack of cards
 let cardNumbers = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
@@ -276,8 +284,8 @@ function runComparison() { // runs a comparison between the players selected car
       playerScore = playerScore + 1;
       console.log(playerScore);
 
-      // take 249 from the value of timeOut
-      timeOut = timeOut - 1000;
+      // take 999 from the value of timeOut
+      timeOut = timeOut - 999;
       console.log(timeOut);
 
       // compute the new difficultyLevel
@@ -298,9 +306,11 @@ function runComparison() { // runs a comparison between the players selected car
       difficultyLevel = 'Very Hard';
       }
 
-      // display the computed score and difficulty level
-      
-      /*scoreSpan.innerHTML = '<p>Score:' + playerScore + '<br>Current Difficulty Level:' + difficultyLevel + '</p>';*/
+      // add one to the Round Number 
+      roundNumber = roundNumber + 1;
+
+      // take one from Rounds Until Completion 
+      roundsUntilCompletion = roundsUntilCompletion - 1;
       
       console.log(timeOut);
       console.log(difficultyLevel);
@@ -309,7 +319,9 @@ function runComparison() { // runs a comparison between the players selected car
    } else {
       displayIncorrectAnswer ();
       playerScore = 0;
-      difficultyLevel = 'Very Easy'
+      difficultyLevel = 'Very Easy';
+      roundNumber = 1;
+      roundsUntilCompletion = 8;
       console.log(playerScore);
       console.log(difficultyLevel);
       
@@ -355,10 +367,13 @@ function clearImagesFromCardsPickedDivs() {
    y = document.getElementById('container6').innerHTML='';
    
    document.getElementById('container8').style.display = 'none';
-
-   pickRandomCard();
-   
-};
+//////////////////////////////////////////////////////////////////
+   /*if (roundsUntilCompletion > 0) {
+      pickRandomCard();
+   } else {
+      displayGameCompletionMsg ();
+   }*/
+}
 
 function displayCorrectAnswer () {
 
@@ -386,7 +401,13 @@ function alertTooFewCards () {
 }
 
 function returnToCurrentScore () {
-   scoreSpan.innerHTML = '<p>Score: ' + playerScore + '<br>Current Difficulty Level: ' + difficultyLevel + '</p>';
+   scoreSpan.innerHTML = '<span><p>Score: ' + playerScore + '<br>Current Difficulty Level: ' + difficultyLevel + '</p></span>' +
+
+                        '<span><p>Round Number: ' + roundNumber + '<br>Rounds Until Completion: ' + roundsUntilCompletion + '</p></span>';
+}
+
+function displayGameCompletionMsg () {
+   '<p>CONGRATULATIONS!! YOU HAVE COMPLETED THE 5 CARD MEMORY CHALLENGE!!</p>';
 }
 
 
