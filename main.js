@@ -183,7 +183,7 @@ function loadUserInterface() {
          y4.setAttribute('id', 'selected-card');
 
       } else {
-            alert('Too many cards selected'); // alert player if he/she attempts to load too many cards into the placeholders
+            alertTooManyCards (); // alert player if he/she attempts to load too many cards into the placeholders
          }   
 
    }
@@ -196,7 +196,7 @@ function loadUserInterface() {
          if (playerSelectionOfCards.length === 5) {
             runComparison();
          } else {
-            alert('You must select 5 cards'); // alerts player if 5 cards have not been picked and tries to submit
+            alertTooFewCards (); // alerts player if 5 cards have not been picked and tries to submit
          };
       };
 
@@ -300,7 +300,7 @@ function runComparison() { // runs a comparison between the players selected car
 
       // display the computed score and difficulty level
       
-      scoreSpan.innerHTML = '<p>Score:' + playerScore + '<br>Current Difficulty Level:' + difficultyLevel + '</p>';
+      /*scoreSpan.innerHTML = '<p>Score:' + playerScore + '<br>Current Difficulty Level:' + difficultyLevel + '</p>';*/
       
       console.log(timeOut);
       console.log(difficultyLevel);
@@ -309,7 +309,7 @@ function runComparison() { // runs a comparison between the players selected car
    } else {
       displayIncorrectAnswer ();
       playerScore = 0;
-      difficultyLevel = 'Easy'
+      difficultyLevel = 'Very Easy'
       console.log(playerScore);
       console.log(difficultyLevel);
       
@@ -331,7 +331,7 @@ function clearArrays() {
    console.log(playerSelectionOfCards);
    cardNumbersFromCardsPicked = [];
    console.log(cardNumbersFromCardsPicked);
-   scoreSpan.innerHTML = '<p>Score:' + playerScore + '<br>Current Difficulty Level:' + difficultyLevel + '</p>';
+   returnToCurrentScore ();
 
    clearImagesFromCardsPickedDivs();
    }
@@ -362,23 +362,32 @@ function clearImagesFromCardsPickedDivs() {
 
 function displayCorrectAnswer () {
 
-   setTimeout(innerDisplayCorrectAnswer, 3000)
-   
-   function innerDisplayCorrectAnswer() {
-      
       scoreSpan.innerHTML ='<p>WELL DONE!!!</p>';
+
    }
-}
 
-/*function displayIncorrectAnswer () {*/
 
-   
-
-   function displayIncorrectAnswer() {
+function displayIncorrectAnswer() {
 
       scoreSpan.innerHTML ='<p>Aw...tough luck, try again!</p>';
       
    }
+
+function alertTooManyCards () {
+   scoreSpan.innerHTML = '<p>5 cards have already been selected. Use CLEAR ALL or REMOVE if neccessary</p>';
+
+   setTimeout (returnToCurrentScore, 3000);
+}
+
+function alertTooFewCards () {
+   scoreSpan.innerHTML = '<p>You must select 5 cards for submission</p>';
+
+   setTimeout (returnToCurrentScore, 3000);
+}
+
+function returnToCurrentScore () {
+   scoreSpan.innerHTML = '<p>Score: ' + playerScore + '<br>Current Difficulty Level: ' + difficultyLevel + '</p>';
+}
 
 
 
