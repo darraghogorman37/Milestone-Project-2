@@ -12,7 +12,7 @@ var playerScore = 0;
 var roundNumber = playerScore + 1;
 
 // set the number of rounds to go until completion
-var roundsUntilCompletion = 8;
+var roundsUntilCompletion = 2;
 
 // displays the current difficulty level
 var scoreSpan = document.getElementById('container10');
@@ -278,7 +278,7 @@ function runComparison() { // runs a comparison between the players selected car
       console.log(playerSelectionOfCards);
 
    if (JSON.stringify(playerSelectionOfCards) === JSON.stringify(cardNumbersFromCardsPicked)) {
-      displayCorrectAnswer ();
+      
 
       // add one to the player's score
       playerScore = playerScore + 1;
@@ -314,6 +314,9 @@ function runComparison() { // runs a comparison between the players selected car
       
       console.log(timeOut);
       console.log(difficultyLevel);
+      console.log(roundsUntilCompletion);
+
+      displayCorrectAnswer ();
 
 
    } else {
@@ -334,6 +337,8 @@ function runComparison() { // runs a comparison between the players selected car
 // clears all arrays to empty
 function clearArrays() {
 
+   console.log(roundsUntilCompletion);
+   
    setTimeout (innerClearArrays, 3000);
 
    function innerClearArrays () {
@@ -367,17 +372,21 @@ function clearImagesFromCardsPickedDivs() {
    y = document.getElementById('container6').innerHTML='';
    
    document.getElementById('container8').style.display = 'none';
-//////////////////////////////////////////////////////////////////
-   /*if (roundsUntilCompletion > 0) {
-      pickRandomCard();
-   } else {
-      displayGameCompletionMsg ();
-   }*/
+
+   console.log(roundsUntilCompletion);  
+   pickRandomCard();
+   
 }
 
 function displayCorrectAnswer () {
 
-      scoreSpan.innerHTML ='<p>WELL DONE!!!</p>';
+      console.log(roundsUntilCompletion);
+      
+
+      if (roundsUntilCompletion === 0) {
+         displayGameCompletionMsg ();
+      } else { scoreSpan.innerHTML ='<p>WELL DONE!!!</p>';
+      };
 
    }
 
@@ -407,8 +416,19 @@ function returnToCurrentScore () {
 }
 
 function displayGameCompletionMsg () {
-   '<p>CONGRATULATIONS!! YOU HAVE COMPLETED THE 5 CARD MEMORY CHALLENGE!!</p>';
+   
+   scoreSpan.innerHTML = '<p>CONGRATULATIONS!! YOU HAVE COMPLETED THE 5 CARD MEMORY CHALLENGE!!</p>';
+
+   returnPlayerVariablesToStart ();
 }
+
+function returnPlayerVariablesToStart () {
+   playerScore = 0;
+   difficultyLevel = 'Very Easy';
+   roundNumber = 0;
+   roundsUntilCompletion = 8;
+}
+
 
 
 
