@@ -12,13 +12,26 @@ var playerScore = 0;
 var roundNumber = playerScore + 1;
 
 // set the number of rounds to go until completion
-var roundsUntilCompletion = 2;
+var roundsUntilCompletion = 8;
+
+// define scoreSpan
+var scoreSpan = document.getElementById('container10');
 
 // displays the current difficulty level
-var scoreSpan = document.getElementById('container10');
-scoreSpan.innerHTML = '<span><p>Score: ' + playerScore + '<br>Current Difficulty Level: ' + difficultyLevel + '</p></span>' +
 
-                     '<span><p>Round Number: ' + roundNumber + '<br>Rounds Until Completion: ' + roundsUntilCompletion + '</p></span>';
+displayInstructions();
+
+function displayInstructions() {
+   scoreSpan.innerHTML = '<p>Start playing by clicking on the cards below to fill the placeholders above. When you are happy with your selection click SUBMIT SELECTION</p>';
+
+   setTimeout(returnToCurrentScore, 15000);
+
+}
+
+
+/*scoreSpan.innerHTML = '<span><p>Score: ' + playerScore + '<br>Current Difficulty Level: ' + difficultyLevel + '</p></span>' +
+
+                     '<span><p>Round Number: ' + roundNumber + '<br>Rounds Until Completion: ' + roundsUntilCompletion + '</p></span>';*/
                         
 
 
