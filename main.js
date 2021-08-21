@@ -1,5 +1,5 @@
 // set initial time for displaying the 5 cards (timeOut) picked from deck to 10s
-var timeOut = 10000;
+var timeOut = 100000;
 
 // set the intial diffulty level (difficultyLevel) to Very Easy
 

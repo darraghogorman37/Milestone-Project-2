@@ -46,7 +46,7 @@
 /* background color for the screen */
 #body-div {
     background-color: green;
-    min-height: 800px; 
+    min-height: 1000px;
 }
 
 /* 52 cards for player selection*/
@@ -90,7 +90,6 @@
     border-color: black;
     margin-top: -33px;
 }
-
 
 #container1-1 img {
     margin-top: 5px; /*creates space between player interface area and the 52 cards for selection */
@@ -136,16 +135,14 @@ button {
     background-color: grey;
 }
 
-/*#restart-button a {
-    font-size: 12px;
-    text-decoration: none;
-    color: black;*/
-}
-
 /* tablet  + laptop size screens */
 @media only screen and (min-width: 768px) {
     .random-card img { /* card images at start of round */ 
         max-height: 280px;
+    }
+
+    #container1-2 { /*prevents 2nd and 3rd card overlapping in the vertical*/
+        margin-bottom: 50px;
     }
 
     .readyforselection {
@@ -153,8 +150,12 @@ button {
     }
 
     #container6 {
-        justify-content: space-evenly;
+        justify-content: center;
         margin: 10px;
+    }
+
+    #container10 {
+        justify-content: space-around;
     }
 
     #container10 p {
@@ -176,8 +177,9 @@ button {
     }
 
     #body-div {
-        min-height: 1400px; 
+    min-height: auto;
     }
+
 }
 
 /* larger size screens */
@@ -200,8 +202,5 @@ button {
     .sticky img {
         width: 127px;
     }
-
-    #body-div {
-        min-height: 2000px;
-    }
+    
 }
