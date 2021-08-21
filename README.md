@@ -183,7 +183,7 @@ XXXXXXXX
 
 ## Code Validation
 
-All html code was run through the W3C Markup Validator (https://validator.w3.org/), all CSS code was run through the W3C CSS Validator (https://jigsaw.w3.org/css-validator/) and all Javascript code was run through the JSHint validator (https://jshint.com/). XXXXXThe CSS code was returned with no errors or warnings. There were a number of warnings associated with the HTML code where heading elements were not placed before section elements. Upon review it was not deemed appropriate to include these. There were no errors associated with the HTML code.XXXXXX
+All html code was run through the W3C Markup Validator (https://validator.w3.org/), all CSS code was run through the W3C CSS Validator (https://jigsaw.w3.org/css-validator/) and all Javascript code was run through the JSHint validator (https://jshint.com/). There were no errors associated with the code when validated using the above.
 
 ## Testing
 
@@ -195,7 +195,7 @@ All html code was run through the W3C Markup Validator (https://validator.w3.org
 
 ### Application Testing
 
-1. Open the web page / run files to start game and check 5 cards are displayed for a period of time before the player interface screen loads.
+1. Open the web page / run files to start the game and check 5 cards are displayed for a period of time before the player interface screen loads and when loaded, the player interface area displays the following message - "Start playing by clicking on the cards below to fill the placeholders above. When you are happy with your selection click SUBMIT SELECTION".
 
 2. Check that clicking on cards below the player interface area sequentially fills the blank "holder" spaces in the player interface area.
 
@@ -213,7 +213,7 @@ All html code was run through the W3C Markup Validator (https://validator.w3.org
 
 9. Check the time periods for displaying the randomly generated cards reduces according to the following schedule. The time period for a particular display is logged out in the console. 
 
-10. Along with the time periods described above, check that the difficulty level increases in line with the schedule below as the game progresses.
+10. Along with the time periods described above, check that the difficulty level increases in line with the schedule as the game progresses.
 
 11. On completeion of 8 rounds of the game, check that the following message "CONGRATULATIONS!! YOU HAVE COMPLETED THE 5 CARD MEMORY CHALLENGE!!" is displayed in the feedback area and the game returns to the beginning. 
 
@@ -236,9 +236,9 @@ The project was deployed to GitHub Pages using the following steps...
 2. At the top of the Repository (not top of page), locate the "Settings" Button on the menu.
 3. Alternatively Click Here for a GIF demonstrating the process starting from Step 2.
 4. Scroll down the Settings page until you locate the "GitHub Pages" Section.
-5. Under "Source", click the dropdown called "None" and select "Master Branch".
-6. The page will automatically refresh.
-7. Scroll back down through the page to locate the now published site link in the "GitHub Pages" section.
+5. Under "Source", click the dropdown called "None" and select "Main" branch.
+6. Then click on "Save" and the page will refresh.
+7. An info message will appear with a link and the web address to the site where the project is now deployed.
 
 
 ## Credits

@@ -1,9 +1,21 @@
+// Hello.
+//
+// This is JSHint, a tool that helps to detect errors and potential
+// problems in your JavaScript code.
+//
+// To start, simply enter some JavaScript anywhere on this page. Your
+// report will appear on the right side.
+//
+// Additionally, you can toggle specific options in the Configure
+// menu.
+
+
 // set initial time for displaying the 5 cards (timeOut) picked from deck to 10s
 var timeOut = 10000;
 
 // set the intial diffulty level (difficultyLevel) to Very Easy
 
-var difficultyLevel = 'Very Easy'
+var difficultyLevel = 'Very Easy';
 
 // set the initial player's score to 0
 var playerScore = 0;
@@ -57,20 +69,21 @@ for(var i = 0; i < cardNumbers.length; i++)
      {
         cards.push(cardNumbers[i] + cardSuits[j]);
      }
-};
+}
 
 var playerSelectionOfCards = [];
 
 // prints the array of the 52 cards
 function printAllCards() {
-console.log(cards)};
+console.log(cards);
+}
 
 printAllCards();
 
 /* creates 52 objects for each of the 52 cards within the single "outer" array named "images". 
 Each of the 52 "inner" arrays contains the unique ordered array number (0-51) of the card within the "outer" array and an src value linking to the image of the respective card*/
 
-let cardImages = new Array();
+let cardImages = [];
 
 for(let i=0; i<52; i++) {
    let card = {
@@ -117,14 +130,14 @@ function pickRandomCard() {
       // Logs the array of 5 cards picked randomly   
       console.log(cardsPicked); 
 
-   };
+   }
 
    // after time elapses, the cards picked from the deck disappear
    
    console.log(timeOut);
    setTimeout(hideCardsPickedDivs, timeOut);
 
-};
+}
 
 
 // hides the cards from the deck
@@ -137,7 +150,7 @@ function hideCardsPickedDivs() {
    document.getElementById('container1-5').style.display = 'none';
 
    loadUserInterface();
-};
+}
 
 
 // all 52 cards in the deck appear for player selection, with player buttons and card placeholders
@@ -177,7 +190,7 @@ function loadUserInterface() {
       l.setAttribute('src', j);
       l.setAttribute('class', 'readyforselection');
       l.setAttribute('data-cardnumber', i);
-   };
+   }
 
    $('.readyforselection').on('click', pushToPlayerSelectionOfCards); // on clicking, the player's selected cards are added to a new array playerSelectionOfCards
 
@@ -220,8 +233,8 @@ function loadUserInterface() {
             runComparison();
          } else {
             alertTooFewCards (); // alerts player if 5 cards have not been picked and tries to submit
-         };
-      };
+         }
+      }
 
    // removes all cards selected by the player from their placeholders   
    $('#player-clearall-button').on('click', clearAll);
@@ -232,7 +245,7 @@ function loadUserInterface() {
 
          for (i=1; i<6; i++) {
 
-            f2 = document.getElementById('span-selection-' + i);
+            let f2 = document.getElementById('span-selection-' + i);
             f2.innerHTML='';
 
          }
@@ -261,15 +274,7 @@ function displayCardsPickedDivs() {
    document.getElementById('container1-3').style.display = 'flex';
    document.getElementById('container1-4').style.display = 'flex';
    document.getElementById('container1-5').style.display = 'flex';
-};
-
-
-// empty the cardsPicked array (array for randomly generated 5 cards)
-function emptyCardsPicked() {
-cardsPicked.splice(0,5);
-console.log(cardsPicked);
-pickRandomCard();
-};
+}
 
 /* displays player's buttons
 function displayPlayersButtons() {
@@ -287,7 +292,7 @@ function runComparison() { // runs a comparison between the players selected car
       let y = x.toString();
       cardNumbersFromCardsPicked.push(y);
       
-   };
+   }
 
    console.log(cardNumbersFromCardsPicked);
       console.log(playerSelectionOfCards);
@@ -343,11 +348,11 @@ function runComparison() { // runs a comparison between the players selected car
       console.log(playerScore);
       console.log(difficultyLevel);
       
-   };
+   }
 
    clearArrays();
 
-};
+}
 
 // clears all arrays to empty
 function clearArrays() {
@@ -367,14 +372,14 @@ function clearArrays() {
 
    clearImagesFromCardsPickedDivs();
    }
-};
+}
 
 // removes any existing images within the div containers 1-5, 6, 7 + 8 and removes the buttons
 function clearImagesFromCardsPickedDivs() {
    for (i=1; i<6; i++) {
    let x = document.getElementById('container1-' + i);
    x.removeChild(x.childNodes[0]);
-   };
+   }
    
    document.getElementById('container7').innerHTML='';
 
@@ -384,7 +389,7 @@ function clearImagesFromCardsPickedDivs() {
 
    }
 
-   y = document.getElementById('container6').innerHTML='';
+   document.getElementById('container6').innerHTML='';
    
    document.getElementById('container8').style.display = 'none';
 
@@ -404,7 +409,7 @@ function displayCorrectAnswer () {
       if (roundsUntilCompletion === 0) {
          displayGameCompletionMsg ();
       } else { scoreSpan.innerHTML ='<p>WELL DONE!!!</p>';
-      };
+      }
 
    }
 
