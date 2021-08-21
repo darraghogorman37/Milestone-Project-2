@@ -1,5 +1,5 @@
 // set initial time for displaying the 5 cards (timeOut) picked from deck to 10s
-var timeOut = 100000;
+var timeOut = 10000;
 
 // set the intial diffulty level (difficultyLevel) to Very Easy
 
@@ -24,7 +24,7 @@ displayInstructions();
 function displayInstructions() {
    scoreSpan.innerHTML = '<p>Start playing by clicking on the cards below to fill the placeholders above. When you are happy with your selection click SUBMIT SELECTION</p>';
 
-   setTimeout(returnToCurrentScore, 15000);
+   setTimeout(returnToCurrentScore, 20000);
 
 }
 
@@ -67,7 +67,7 @@ console.log(cards)};
 
 printAllCards();
 
-/* creates 52 "inner" arrays for each of the 52 cards within the single "outer" array named "images". 
+/* creates 52 objects for each of the 52 cards within the single "outer" array named "images". 
 Each of the 52 "inner" arrays contains the unique ordered array number (0-51) of the card within the "outer" array and an src value linking to the image of the respective card*/
 
 let cardImages = new Array();
