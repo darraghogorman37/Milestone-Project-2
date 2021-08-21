@@ -144,6 +144,8 @@ function hideCardsPickedDivs() {
 
 function loadUserInterface() {
 
+   memorizeMsgOff();
+   
    document.getElementById('container9').style.display = 'flex'; // player interface area
 
    document.getElementById('container8').style.display = 'flex'; // <div> for placholders
@@ -386,7 +388,10 @@ function clearImagesFromCardsPickedDivs() {
    
    document.getElementById('container8').style.display = 'none';
 
-   console.log(roundsUntilCompletion);  
+   console.log(roundsUntilCompletion);
+
+   memorizeMsgOn();
+     
    pickRandomCard();
    
 }
@@ -441,6 +446,22 @@ function returnPlayerVariablesToStart () {
    roundNumber = 0;
    roundsUntilCompletion = 8;
 }
+
+/*function displayMemorizeCardsMsg() {
+   
+   scoreSpan.innerHTML = '<p>MEMORIZE THE CARDS BELOW AS THEY WILL DISAPPEAR SOON!</p>';
+
+}*/
+
+function memorizeMsgOff() {
+   document.getElementById('container13').innerHTML = '';
+}
+
+function memorizeMsgOn() {
+   document.getElementById('container13').innerHTML = '<p>MEMORIZE THE CARDS BELOW AS THEY WILL DISAPPEAR SOON!!</p>';
+}
+
+
 
 
 
