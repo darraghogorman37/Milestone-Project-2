@@ -447,12 +447,6 @@ function returnPlayerVariablesToStart () {
    roundsUntilCompletion = 8;
 }
 
-/*function displayMemorizeCardsMsg() {
-   
-   scoreSpan.innerHTML = '<p>MEMORIZE THE CARDS BELOW AS THEY WILL DISAPPEAR SOON!</p>';
-
-}*/
-
 function memorizeMsgOff() {
    document.getElementById('container13').innerHTML = '';
 }

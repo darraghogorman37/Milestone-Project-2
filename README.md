@@ -23,7 +23,7 @@ The following User Stories were used to focus the development of the project. No
 
 The project provides solutions to the above User Stories as follows;
 
-1. The game is relatively simple - five playing cards are displayed for a set period of time before disappearing from view, with the pattern to be recalled and replicated by the user. On loading the player interface area for the 1st time there is an explanation of how to play.
+1. The game is relatively simple to play - five playing cards are displayed for a set period of time before disappearing from view, with the pattern to be recalled and replicated by the user. On loading the player interface area for the 1st time there is an explanation of how to play.
 2. The layout and gameplay across all screen sizes has been developed with positive User Experience as a priority.
 3. The on-screen layout adapts to all screen sizes to maximise player usability.
 4. Cards are selected by the user by simply clicking on the card image from the 52 card images available.
@@ -170,7 +170,7 @@ All html code was run through the W3C Markup Validator (https://validator.w3.org
 2. Visit the above address via Google Chrome, Internet Explorer and Mozilla Firefox browsers.
 3. Compare the "deployed" version of the website with the version outputted from the source code in the project repository.
 
-### Game Testing
+### Application Testing
 
 1. Open the web page / run files to start game and check 5 cards are displayed for a period of time before the player interface screen loads.
 
