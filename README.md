@@ -49,20 +49,43 @@ The below sections detail both the existing features and potential future fetaur
 
 * Player-Interface Area
     * Surrounded by a grey border, this area "sticks" to the top of the screen meaning that players always have accessibility to it, even on smaller screens where they may have to scroll down the screen to select cards to fill their selection. The player interface area contains 5 placeholders where the player's selected cards are displayed. The player interface area also contains the player's buttons and the feedback area. 
-    ![Player Interface Area](https://github.com/darraghogorman37/Milestone-Project-1/blob/cd831d7c9b66b4049f63da273de65c14a2c054d0/assets/images/screenshots/navbar-large.JPG)
+    ![Player Interface Area](assets/features-images/player-interface-area.JPG)
 * Player's Card Selection Placeholders
-    * These are containers which display the players selected cards. T
-    ![Player's Card Selection Placeholders](https://github.com/darraghogorman37/Milestone-Project-1/blob/38debc0d0056ec2f976d73744ec944f3e2e6e802/assets/images/screenshots/callout-bar.JPG)
+    * These are containers which display the players selected cards. 
+    ![Player's Card Selection Placeholders](assets/features-images/placholders.JPG)
 * "SUBMIT SELECTION", "REMOVE" and "CLEAR ALL" player buttons
     * These are the player's buttons. The user can remove the last card inputted into his or her selection by simply clicking the "REMOVE" button. The user can clear all the cards from their current selection by clicking the "CLEAR ALL" button. The user can submit his or her selection simply by clicking on the "SUBMIT" button.
-    ![Player's Buttons](https://github.com/darraghogorman37/Milestone-Project-1/blob/cd831d7c9b66b4049f63da273de65c14a2c054d0/assets/images/screenshots/logo+slogan.JPG)
+    ![Player's Buttons](assets/features-images/buttons.JPG)
 * Feedback Area
-    * Displays messages to the player as the game progresses. On submission of his/her selected cards the feedback area informs the player if their selection was correct or incorrect. The  and displays the player's score and the difficully level currently being played at, the number of rounds completed thus far and the number of rounds until completion of the game. On loading the player interface area for the 1st time there is an explanation of how to play within the feedback area to get the player started. On completion of the game a message is displayed congratulating the player.
+    * Displays messages to the player as the game progresses. On submission of his/her selected cards the feedback area informs the player if their selection was correct or incorrect. The  and displays the player's score and the difficully level currently being played at, the number of rounds completed thus far and the number of rounds until completion of the game.  
+    ![Feedback Area](assets/features-images/feedback-area.JPG)
+
+    On loading the player interface area for the 1st time there is an explanation of how to play within the feedback area to get the player started.
+    ![Game Instruction message](assets/features-images/instructions.JPG)
+
+    Messages are displayed to the player indicating whether the card pattern he/she submitted was correct or incorrect.   
+    ![Message for Correct Answer](assets/features-images/correct-msg.JPG)  
+
+    ![Message for Incorrect Answer](assets/features-images/incorrect-msg.JPG)
+
+    If the player attempts to select a 6th card when the place holders are already full with 5 cards he/she will be alerted with the following message.
+    ![Message for more than  cards selected](assets/features-images/more-than-5-cards-msg.JPG)
+
+    If the player presses the "SUBMIT SELECTION" button when there is not yet 5 cards selected he/she will be alerted with the following message.
+    ![Message for less than 5 cards selected](assets/features-images/less-than-5-cards-msg.JPG)
+
+    On completion of the game a message is displayed congratulating the player.  
+    ![Message for game completion](assets/features-images/game-complete-msg.JPG)
+
 * Intuitive Object Selection
-    * The player can fill his / her selection placeholders with the required cards by simply clicking on any of the 52 card images below the player interface area.
-    ![Intuitive Object Selection](https://github.com/darraghogorman37/Milestone-Project-1/blob/cd831d7c9b66b4049f63da273de65c14a2c054d0/assets/images/screenshots/member-quotes.JPG)
+    * The player can fill his / her selection placeholders with the required cards by simply clicking on any of the 52 card images below the player interface area.  
+    ![Intuitive Object Selection](assets/features-images/object-selection.JPG)
 * Cross-device compatability
-    * The appearance and layout of the screens within the game adapt to different screen sizes in order to ensure excellent User Experience and allow the game to be played on all types of devices.
+    * The appearance and layout of the screens within the game adapt to different screen sizes in order to ensure excellent User Experience and allow the game to be played on all types of devices. The layouts on an iPhone 5/SE, iPad and laptop are shown respectively below.  
+    ![iPhone 5/SE layout](assets/features-images/i-phone-5-SE-layout.JPG)  
+    ![iPad layout](assets/features-images/ipad-layout.JPG)  
+    ![laptop layout](assets/features-images/laptop-layout.JPG)  
+
 * Increasing difficulty through game progression.
     * As more consequtive correct patterns are identified by the player, the time period for which the randomly generated cards are displayed shortens, thus increasing the difficulty of the game.
 
