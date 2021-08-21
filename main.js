@@ -367,7 +367,7 @@ function clearArrays() {
    }
 };
 
-// removes any existing images within the div containers 1-5, 7 + 8 and removes the buttons
+// removes any existing images within the div containers 1-5, 6, 7 + 8 and removes the buttons
 function clearImagesFromCardsPickedDivs() {
    for (i=1; i<6; i++) {
    let x = document.getElementById('container1-' + i);

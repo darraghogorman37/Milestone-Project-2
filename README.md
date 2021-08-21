@@ -166,42 +166,39 @@ All html code was run through the W3C Markup Validator (https://validator.w3.org
 
 ### Test Deployment
 
-    1. Visit the relevant webpage address (https://darraghogorman37.github.io/) and ensure site is live.
-    2. Visit the above address via Google Chrome, Internet Explorer and Mozilla Firefox browsers.
-    3. Compare the "deployed" version of the website with the version outputted from the source code in the project repository.
+1. Visit the relevant webpage address (https://darraghogorman37.github.io/) and ensure site is live.
+2. Visit the above address via Google Chrome, Internet Explorer and Mozilla Firefox browsers.
+3. Compare the "deployed" version of the website with the version outputted from the source code in the project repository.
 
 ### Game Testing
 
 1. Open the web page / run files to start game and check 5 cards are displayed for a period of time before the player interface screen loads.
 
-2. Check that clicking on cards below the player interface area sequentially fills the blank "holder" spaces in the player interface area
+2. Check that clicking on cards below the player interface area sequentially fills the blank "holder" spaces in the player interface area.
 
-3. Check that clicking the "REMOVE" button removes the most recently selected card from its holder
+3. Check that clicking the "REMOVE" button removes the most recently selected card from its holder.
 
 4. Check that clicking the "CLEAR ALL" button removes all the currently selected cards from their holders
 
-5. Check that clicking the "SUBMIT SELECTION" button when there are less than 5 cards selected in the placeholders produces the following message "XXXX".  
+5. Check that clicking the "SUBMIT SELECTION" button when there are less than 5 cards selected in the placeholders produces the message "You must select 5 cards for submission" in the feedback area. Also check that the message "5 cards have already been selected" is displayed in the feedback area when there are 5 cards in the placeholder and the player attempts to add another card.   
 
 6. After random repition and multiple iterations of steps 2-5 above, select 5 cards to place in the holders so that these cards selected (and the order in which they are selected) match the randomly generated cards (and the order in which they were displayed) from Step 1 above. This can be ensured by reading the log of the 5 randomly generated cards from the console.
  
-7. Check that clicking the "SUMBIT SELECTION" button causes the player's selection produces a statement telling the player if the answer is CORRECT / INCORRECT and subsequently displays 5 randomly generated new cards (next round of the game).
+7. Check that clicking the "SUMBIT SELECTION" button produces a statement in the feedback area telling the player if the answer is correct ("WELL DONE!!!" is displayed in the feedback area) or incorrect ("Aw...tough luck, try again!") and subsequently displays 5 randomly generated new cards (next round of the game).
 
 8. Repeat steps 1-7 above for subsequent rounds of the game, progressing through the game with correct answers.
 
-9. Check the time periods for displaying the randomly generated cards reduces according to the following schedule. The time period for a particular display is shown as XXXX in the console log. 
+9. Check the time periods for displaying the randomly generated cards reduces according to the following schedule. The time period for a particular display is logged out in the console. 
 
 10. Along with the time periods described above, check that the difficulty level increases in line with the schedule below as the game progresses.
 
-11. On completeion of XX rounds of the game, check that the following message is displayed "XXXXX" and the game returns to the beginning. 
+11. On completeion of 8 rounds of the game, check that the following message "CONGRATULATIONS!! YOU HAVE COMPLETED THE 5 CARD MEMORY CHALLENGE!!" is displayed in the feedback area and the game returns to the beginning. 
 
-12. Repeat steps 1-X above for 2 full rounds of the new game following completion of the previous game.
+12. Repeat steps 1-11 above for 2 full rounds of the new game following completion of the previous game.
 
-13. Submit an incorrect pattern by selecting 5 cards into the placeholders that are not the same as those that were randomly generated and clicking the "SUBMIT SELECTION" button. Check that this results in the display of a message indicating that the incorrect pattern has been submitted.
+13. Submit an incorrect pattern by selecting 5 cards into the placeholders that are not the same as those that were randomly generated and clicking the "SUBMIT SELECTION" button. Check that this results in the display of a message indicating that the incorrect pattern has been submitted ("Aw...tough luck, try again!" should be displayed in the feedback area).
 
 14. Complete the above steps 1-13 for both the development version of the game and the deployed version of the game. Ensure there are no differences in the layout and functionality of the two versions.
-
-The following minor issues remain unresolved after testing and bug-fixing;
-
 
 
 ## Deployment
@@ -210,66 +207,26 @@ Deployment of the project was achieved through the use of GitHub Pages.
 
 The project files were copied into a GitHub online repository which automatically deploys to the web address https://darraghogorman37.github.io/
 
+The project was deployed to GitHub Pages using the following steps...
+
+1. Log in to GitHub and locate the GitHub Repository
+2. At the top of the Repository (not top of page), locate the "Settings" Button on the menu.
+3. Alternatively Click Here for a GIF demonstrating the process starting from Step 2.
+4. Scroll down the Settings page until you locate the "GitHub Pages" Section.
+5. Under "Source", click the dropdown called "None" and select "Master Branch".
+6. The page will automatically refresh.
+7. Scroll back down through the page to locate the now published site link in the "GitHub Pages" section.
+
 
 ## Credits
 
 ### Content
 
-The gym logo is based on the "dumbell" logo from the Font Awesome library. https://fontawesome.com/
-
-The social media icons located in the footer are based on icons from the Font Awesome library. https://fontawesome.com/
-
-The "Alfa Slab One" font-type used for the `<h1>` and `<h2>` headings and "Lato" font-type used for the company slogan on the Home page are from the Google Fonts library. https://fonts.google.com/
-
-The map on the Home Page is an `<iframe>` element linked to Google Maps. https://www.google.com/maps
-
-The Exercise of the Week is an `<iframe>` element linked to a YouTube video at web address https://www.youtube.com/watch?v=Ow58yHEl_Ls&t=16s by Omarlsuf.
-
+The "Teko" font-type used for text in the player feedback area is from the Google Fonts library. https://fonts.google.com/
 
 ### Media
 
-The photos used in this site were obtained from the following sources;
-
-
-#### Home Page
-
-* Build Strength; photo by Sven Mieke, obtained from Unsplash.com.
-
-* Get Flexible; photo by Rawan Yasser, obtained from Unsplash.com.
-
-* Burn Fat; photo by Leon Ardho, obtained from Pexels.com.
-
-* Feel Great; photo by Alora Griffiths, obtained from Unsplash.com.
-
-
-#### What Our Members Say page
-
-* The photo of "Sarah Dooley" is by Katherine Hood obtinaed from Unsplash.com.
-* The photo is "Kate Smyth" is by Ayo Ogunseinde obtinaed from Unsplash.com.
-* The photo of "John Harper" is by Karsten Winegeart obtinaed from Unsplash.com.
-* The photo if "Paula Radley" is by Sergio Pedemonte obtinaed from Unsplash.com.
-* The photo of "Scott Jones" is by Anastase Maragos obtinaed from Unsplash.com.
-
-
-#### Gallery page
-
-Note that the names of the photos as listed below are as per their name in the project folder Milestone-Project-1/assets/css/images/
-
-* barbell-work; by Sushil Ghimire obtained from Unsplash.com.
-* boxing; by Sam Moqadam obtained from Unsplash.com.
-* dumbells; by Danielle Cerullo obtained from Unsplash.com.
-* floor-area-1; Humphrey Muleba obtained from Unsplash.com.
-* floor-area-2; Risen Wang obtained from Unsplash.com.
-* floor-area-3; Rodrigo Sarsfield obtained from Unsplash.com.
-* pulley; Total Shape obtained from Unsplash.com.
-* rack; Jelmer Assink obtained from Unsplash.com.
-* ropes; Meghan Hholmes obtained from Unsplash.com.
-* squat-rack; Javier-Santos-Guzman obtained from Unsplash.com.
-* treadmills; Sven Mieke obtained from Unsplash.com.
-* treadmills2; Chuttersnap obtained from Unsplash.com.
-* weights; Brett Jordan obtained from Unsplash.com.
-* yoga-pose; Emily Sea obtained from Unsplash.com.
-
+The card images were obtained online from the American Bridge Contract League (ABCL) Resource Center. See https://acbl.mybigcommerce.com/.
 
 ### Acknowledgements
 
