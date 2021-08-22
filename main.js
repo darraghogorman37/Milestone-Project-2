@@ -22,7 +22,7 @@ var scoreSpan = document.getElementById('container10');
 displayInstructions();
 
 function displayInstructions() {
-   scoreSpan.innerHTML = '<p>Start playing by clicking on the cards below to fill the placeholders above. When you are happy with your selection click SUBMIT SELECTION</p>';
+   scoreSpan.innerHTML = '<p>Start playing by clicking on the cards below to fill the placeholders above so that they match the cards you have just seen. When you are happy with your selection click SUBMIT SELECTION</p>';
 
    setTimeout(returnToCurrentScore, 20000);
 

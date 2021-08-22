@@ -4,7 +4,7 @@ This is a web based memory training game that allows users to improve their shor
 
 ## UX
 
-The following User Stories were used to focus the development of the project. Note that the feautures mentioned below are described in detail with screenshots in the features section of this README.
+The following User Stories were used to focus the development of the project. Note that the feautures mentioned below are described in detail with screenshots in the "Features" section of this README.
 
 ### User (Game Player)
 
@@ -39,7 +39,7 @@ The project provides solutions to the above User Stories as follows;
 
 ### Wireframes
 
-Wireframes were produced prior to coding to assist with the project development. These can be found in the project repository (MILESTONE-PROJECT-2/wireframes.pdf) or can be accessed online from .
+Wireframes were produced prior to coding to assist with the project development. These can be found in the project repository (MILESTONE-PROJECT-2/wireframes.pdf) or can be accessed online from https://github.com/darraghogorman37/Milestone-Project-2/blob/aaccb8f68f0c56e989a5dfe154f4753f6c5ea4d3/wireframes.pdf.
 
 ## Features
 
@@ -57,7 +57,7 @@ The below sections detail both the existing features and potential future fetaur
     * These are the player's buttons. The user can remove the last card inputted into his or her selection by simply clicking the "REMOVE" button. The user can clear all the cards from their current selection by clicking the "CLEAR ALL" button. The user can submit his or her selection simply by clicking on the "SUBMIT" button.
     ![Player's Buttons](assets/features-images/buttons.JPG)
 * Feedback Area
-    * Displays messages to the player as the game progresses. On submission of his/her selected cards the feedback area informs the player if their selection was correct or incorrect. The  and displays the player's score and the difficully level currently being played at, the number of rounds completed thus far and the number of rounds until completion of the game.  
+    * Displays messages to the player as the game progresses. On submission of his/her selected cards the feedback area informs the player if their selection was correct or incorrect. The feedback area also displays the player's score and the difficully level currently being played at, the number of rounds completed thus far and the number of rounds until completion of the game.  
     ![Feedback Area](assets/features-images/feedback-area.JPG)
 
     On loading the player interface area for the 1st time there is an explanation of how to play within the feedback area to get the player started.
@@ -71,7 +71,7 @@ The below sections detail both the existing features and potential future fetaur
     If the player attempts to select a 6th card when the place holders are already full with 5 cards he/she will be alerted with the following message.
     ![Message for more than  cards selected](assets/features-images/more-than-5-cards-msg.JPG)
 
-    If the player presses the "SUBMIT SELECTION" button when there is not yet 5 cards selected he/she will be alerted with the following message.
+    If the player presses the "SUBMIT SELECTION" button when there is not yet 5 cards selected he/she will be alerted with the following message.  
     ![Message for less than 5 cards selected](assets/features-images/less-than-5-cards-msg.JPG)
 
     On completion of the game a message is displayed congratulating the player.  
@@ -178,7 +178,7 @@ The below resources were used to produce this project:
 
 ## Development Life Cycle
 
-This project followed the following path with regards to the development lifecycle.
+This project was developed along following pathway;
 
 1. Planning and Design
 * Wireframes were drawn up to assist in the design of the on-screen layout
@@ -208,7 +208,7 @@ All html code was run through the W3C Markup Validator (https://validator.w3.org
 
 ### Test Deployment
 
-1. Visit the relevant webpage address (https://darraghogorman37.github.io/) and ensure site is live.
+1. Visit the relevant webpage address https://darraghogorman37.github.io/Milestone-Project-2/ and ensure site is live.
 
 2. Visit the above address via Google Chrome, Internet Explorer and Mozilla Firefox browsers.
 
@@ -240,7 +240,7 @@ All html code was run through the W3C Markup Validator (https://validator.w3.org
 
 11. On completeion of 8 rounds of the game, check that the following message "CONGRATULATIONS!! YOU HAVE COMPLETED THE 5 CARD MEMORY CHALLENGE!!" is displayed in the feedback area and the game returns to the beginning. 
 
-12. Repeat steps 1-11 above for 2 full rounds of the new game following completion of the previous game.
+12. Repeat steps 1-10 above for 2 full rounds of the new game following completion of the previous game.
 
 13. Submit an incorrect pattern by selecting 5 cards into the placeholders that are not the same as those that were randomly generated and clicking the "SUBMIT SELECTION" button. Check that this results in the display of a message indicating that the incorrect pattern has been submitted ("Aw...tough luck, try again!" should be displayed in the feedback area).
 
