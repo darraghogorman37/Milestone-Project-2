@@ -1,15 +1,3 @@
-// Hello.
-//
-// This is JSHint, a tool that helps to detect errors and potential
-// problems in your JavaScript code.
-//
-// To start, simply enter some JavaScript anywhere on this page. Your
-// report will appear on the right side.
-//
-// Additionally, you can toggle specific options in the Configure
-// menu.
-
-
 // set initial time for displaying the 5 cards (timeOut) picked from deck to 10s
 var timeOut = 10000;
 
@@ -39,20 +27,6 @@ function displayInstructions() {
    setTimeout(returnToCurrentScore, 20000);
 
 }
-
-
-/*scoreSpan.innerHTML = '<span><p>Score: ' + playerScore + '<br>Current Difficulty Level: ' + difficultyLevel + '</p></span>' +
-
-                     '<span><p>Round Number: ' + roundNumber + '<br>Rounds Until Completion: ' + roundsUntilCompletion + '</p></span>';*/
-                        
-
-
-/*$('#instructions-button').on('click', displayInstructions);
-
-function displayInstructions() {
-   scoreSpan.innerHTML = '<p>Click On Cards Below to Fill Your Selection Above</p>'
-
-}*/
 
 // An array of the numbers component of a standard 52 pack of cards
 let cardNumbers = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
@@ -98,7 +72,7 @@ for(let i=0; i<52; i++) {
 // prints the images array containing 52 "inner" arrays, each representing a card
 console.log(cardImages);
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 // creates a random card image and inserts it into each of the 5 container div elements
 
 var cardsPicked = [];
@@ -276,10 +250,6 @@ function displayCardsPickedDivs() {
    document.getElementById('container1-5').style.display = 'flex';
 }
 
-/* displays player's buttons
-function displayPlayersButtons() {
-
-};*/
 
 // compares playerSelectionOfCards versus cardsPicked on clicking "SUBMIT SELECTION" button
 
@@ -450,6 +420,7 @@ function returnPlayerVariablesToStart () {
    difficultyLevel = 'Very Easy';
    roundNumber = 0;
    roundsUntilCompletion = 8;
+   timeOut = 10000;
 }
 
 function memorizeMsgOff() {

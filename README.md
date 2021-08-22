@@ -39,7 +39,7 @@ The project provides solutions to the above User Stories as follows;
 
 ### Wireframes
 
-A series of wireframes were produced prior to coding to assist with the project development. These can be found in the project repository (MILESTONE-PROJECT-1/wireframes.pdf) or can be accessed online from https://github.com/darraghogorman37/Milestone-Project-1/blob/cd84c7c647a8ff781902cb82f42f6fa4a5d28c6a/wireframes.pdf.
+Wireframes were produced prior to coding to assist with the project development. These can be found in the project repository (MILESTONE-PROJECT-2/wireframes.pdf) or can be accessed online from .
 
 ## Features
 
@@ -176,10 +176,29 @@ The below resources were used to produce this project:
     * https://emmet.io/
 
 
-## Development Cycle and Commit Messages
+## Development Life Cycle
 
-XXXXXXXX
+This project followed the following path with regards to the development lifecycle.
 
+1. Planning and Design
+* Wireframes were drawn up to assist in the design of the on-screen layout
+* Project Planning steps were listed and estimated timeframes put against various milestones
+* The functionality and interactivity of the application was mapped out to help visualise the javascript code to be implemented
+
+2. Implementation 
+* Code was written for the various elements of the application, with functionality tested at each step of the way and issues resolved at their root.
+* Added and refined sytling and layout of the application
+* Regular commits of the coding with ample descriptions.
+
+3. Testing and Validation
+* On substantial completion of the Implementation phase, testing procedures were drawn up and implemented in line with those described in the "Application Testing" section below.
+* Code was validated by external validators as described in the "Code Validation" section below.
+
+4. Refinement
+* The code was refined to ensure readability and future maintenance.
+
+5. Deployment
+* The application was deployed via the web as described in the "Deployment" section below. 
 
 ## Code Validation
 
@@ -190,7 +209,9 @@ All html code was run through the W3C Markup Validator (https://validator.w3.org
 ### Test Deployment
 
 1. Visit the relevant webpage address (https://darraghogorman37.github.io/) and ensure site is live.
+
 2. Visit the above address via Google Chrome, Internet Explorer and Mozilla Firefox browsers.
+
 3. Compare the "deployed" version of the website with the version outputted from the source code in the project repository.
 
 ### Application Testing
@@ -213,6 +234,8 @@ All html code was run through the W3C Markup Validator (https://validator.w3.org
 
 9. Check the time periods for displaying the randomly generated cards reduces according to the following schedule. The time period for a particular display is logged out in the console. 
 
+![Schedule](assets/features-images/difficulty-levels.JPG)
+
 10. Along with the time periods described above, check that the difficulty level increases in line with the schedule as the game progresses.
 
 11. On completeion of 8 rounds of the game, check that the following message "CONGRATULATIONS!! YOU HAVE COMPLETED THE 5 CARD MEMORY CHALLENGE!!" is displayed in the feedback area and the game returns to the beginning. 
@@ -223,14 +246,16 @@ All html code was run through the W3C Markup Validator (https://validator.w3.org
 
 14. Complete the above steps 1-13 for both the development version of the game and the deployed version of the game. Ensure there are no differences in the layout and functionality of the two versions.
 
+### Known Issues / Bugs
+
+In the Internet Explorer web browser the player's card placeholders and the 52 card images do not centre on the screen as in Firefox and Chrome. See screenshot below.
+![Internet Explorer Issue](assets/features-images/internet-explorer-issue.JPG)
 
 ## Deployment
 
 Deployment of the project was achieved through the use of GitHub Pages.
 
-The project files were copied into a GitHub online repository which automatically deploys to the web address https://darraghogorman37.github.io/
-
-The project was deployed to GitHub Pages using the following steps...
+The project was deployed to GitHub Pages using the following steps;
 
 1. Log in to GitHub and locate the GitHub Repository
 2. At the top of the Repository (not top of page), locate the "Settings" Button on the menu.
@@ -240,6 +265,7 @@ The project was deployed to GitHub Pages using the following steps...
 6. Then click on "Save" and the page will refresh.
 7. An info message will appear with a link and the web address to the site where the project is now deployed.
 
+The web address for the application is https://darraghogorman37.github.io/Milestone-Project-2/.
 
 ## Credits
 
